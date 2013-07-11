@@ -1,25 +1,27 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.0'
-gem 'mongoid'
-gem 'devise'
+gem 'mongoid',  github: 'mongoid/mongoid'
+gem 'devise',   github: 'plataformatec/devise', branch: 'rails4'
 
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-
-gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
-group :development, :test do 
+group :test, :development do
+  gem 'pry'
   gem 'rspec-rails'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  # gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
+
   gem 'factory_girl_rails'
   gem 'database_cleaner'
-  # gem 'mongoid-rspec'
+end
+
+gem 'sass-rails',   '~> 4.0.0'
+gem 'uglifier',     '>= 1.3.0'
+gem 'coffee-rails', '~> 4.0.0'
+gem 'jbuilder',     '~> 1.2'
+gem 'jquery-rails'
+gem 'turbolinks'
+
+group :doc do
+  gem 'sdoc', require: false
 end
