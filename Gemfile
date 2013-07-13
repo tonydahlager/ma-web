@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.0'
+gem 'rails',    '4.0.0'
 gem 'mongoid',  github: 'mongoid/mongoid'
 gem 'devise',   github: 'plataformatec/devise', branch: 'rails4'
 
@@ -11,8 +11,7 @@ group :test, :development do
   gem 'factory_girl_rails'
   # gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
 
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
+  gem 'guard-rspec'
 end
 
 gem 'sass-rails',   '~> 4.0.0'
