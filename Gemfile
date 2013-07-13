@@ -17,13 +17,20 @@ end
 gem 'sass-rails',   '~> 4.0.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jbuilder',     '~> 1.2'
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'jbuilder',     '~> 1.2'
 
 
 gem 'rails-backbone', github: 'westonplatter/backbone-rails'
 gem 'marionette-rails'
+
+
+gem 'turbolinks'
+gem 'bootstrap-sass'
+
+
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :doc do
   gem 'sdoc', require: false
