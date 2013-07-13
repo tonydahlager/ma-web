@@ -20,6 +20,15 @@ GIT
       warden (~> 1.2.1)
 
 GIT
+  remote: git://github.com/scambra/devise_invitable.git
+  revision: 1c6a50bb29f8637b3bffb05c2ba32e927d105113
+  branch: rails4
+  specs:
+    devise_invitable (1.2.0.rc1)
+      actionmailer (>= 4.0.0.rc1)
+      railties (>= 4.0.0.rc1)
+
+GIT
   remote: git://github.com/westonplatter/backbone-rails.git
   revision: 478cbe6ed34b3b64f256bd07296c0571c2408fb3
   specs:
@@ -221,6 +230,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   database_cleaner
   devise!
+  devise_invitable!
   factory_girl_rails
   guard-rspec
   jbuilder (~> 1.2)

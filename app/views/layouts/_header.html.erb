@@ -8,7 +8,7 @@
   <div class='pull-right'>
     <ul class='nav'>
       <li>
-        <%= link_to 'Edit account', edit_user_registration_path %>
+        <%= link_to 'Edit account', edit_user_registration_path(current_user) %>
       </li>
       <li>
         <%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>

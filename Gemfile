@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'rails',    '4.0.0'
-gem 'mongoid',  github: 'mongoid/mongoid'
-gem 'devise',   github: 'plataformatec/devise', branch: 'rails4'
+gem 'rails',   '4.0.0'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'devise',  github: 'plataformatec/devise', branch: 'rails4'
+gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
 
 group :test, :development do
   gem 'pry'

@@ -37,3 +37,13 @@ task :symlink_database_yml do
   run "ln -sfn #{shared_path}/config/application.yml #{release_path}/config/application.yml"
 end
 after 'bundle:install', 'symlink_database_yml'
+
+
+namespace :mongoid do
+  desc "Create MongoDB indexes"
+  task :index do
+    run "cd #{current_path} && #{bundle_cmd} exec rake db:mongoid:create_indexes", once: true
+  end
+end
+
+after "deploy:update", "mongoid:index"
