@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Actions</th>
+  </tr>
+  
+
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card.title %></td>
+      <td><%= card.description %></td>
+      <td><%= link_to 'Show', admin_card_path(card) %></td>
+    </tr>
+  <% end %>
+</table>
+

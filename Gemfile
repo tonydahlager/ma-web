@@ -21,6 +21,10 @@ gem 'jbuilder',     '~> 1.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 
+
+gem 'rails-backbone', github: 'westonplatter/backbone-rails'
+gem 'marionette-rails'
+
 group :doc do
   gem 'sdoc', require: false
 end

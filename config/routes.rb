@@ -1,8 +1,15 @@
 Varkek::Application.routes.draw do
   
-  devise_for :users
+  namespace :admin do 
+    resources :cards
+  end
+
+  resources :cards, only: [:index, :show]
   
-  get "dashboard/index"
+  get "dashboard/index" # => 'dashboard#index'
+  get "dashboard"         => 'dashboard#index'
+
+  devise_for :users
 
   root to: 'dashboard#index'
 end
