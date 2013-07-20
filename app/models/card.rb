@@ -5,4 +5,5 @@ class Card
   field :description, type: String
 
   embeds_many :paragraphs
+  accepts_nested_attributes_for :paragraphs
 end
