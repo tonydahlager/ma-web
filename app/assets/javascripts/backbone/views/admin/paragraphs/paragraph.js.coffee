@@ -1,6 +1,6 @@
-Varkek.Views.Admin.Paragraphs ||= {}
+Varkek.Admin.Views.Paragraphs ||= {}
 
-class Varkek.Views.Admin.Paragraphs.ParagraphView extends Backbone.View
+class Varkek.Admin.Views.Paragraphs.ParagraphView extends Backbone.View
 	template: JST['/backbone/admin/views/paragraphs/paragraph']
 
 	className: 'paragraph'
