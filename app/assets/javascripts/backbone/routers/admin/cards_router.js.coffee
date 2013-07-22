@@ -4,15 +4,15 @@ class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
     @cards.reset options.cards
 
   routes:
-    "new"      : "newCard"
+    "new"      : "new"
     "index"    : "index"
     ":id/edit" : "edit"
     ":id"      : "show"
     ".*"        : "index"
 
-  newCard: ->
-    # @view = new Bbex.Views.Posts.NewView(collection: @posts)
-    # $("#posts").html(@view.render().el)
+  new: ->
+    @view = new Varkek.Admin.Views.Cards.New(collection: @cards)
+    $("#cards").html(@view.render().el)
 
   index: ->
     @view = new Varkek.Admin.Views.Cards.Index(cards: @cards)

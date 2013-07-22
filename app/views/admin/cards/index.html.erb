@@ -1,12 +1,10 @@
 <script type="text/javascript">
-  
+
   $(document).ready( function(){
     new Varkek.Admin.Routers.CardsRouter({ cards: <%= @cards.to_json.html_safe -%>});
     Backbone.history.start();
-  });  
-  
+  });
+
 </script>
 
 <div id="cards"></div>
-
-<%= link_to 'New Card', new_admin_card_path %>

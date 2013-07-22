@@ -8,7 +8,7 @@ class Varkek.Admin.Views.Cards.Index extends Backbone.View
 	initialize: () ->
     @options.cards.bind('reset', @addAll)
 
-	addAll: () => 
+	addAll: () =>
 		@options.cards.each(@addOne)
 
 	addOne: (model) =>
@@ -20,5 +20,5 @@ class Varkek.Admin.Views.Cards.Index extends Backbone.View
 		@addAll()
 
 		return this
-		
+
 
