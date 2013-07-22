@@ -26,8 +26,10 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'devise', '~> 3.0.0'
 gem 'rails-backbone', github: 'westonplatter/backbone-rails'
+gem 'marionette-rails'
+gem 'rabl'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
 
-gem 'rabl'
+
