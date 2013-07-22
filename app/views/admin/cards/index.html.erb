@@ -1,7 +1,8 @@
 <script type="text/javascript">
 
   $(document).ready( function(){
-    new Varkek.Admin.Routers.CardsRouter({ cards: <%= @cards.to_json.html_safe -%>});
+    var cards = <%= (Rabl::Renderer.json(@cards, 'admin/cards/index', view_path: 'app/views')).html_safe -%>;
+    new Varkek.Admin.Routers.CardsRouter({ cards: cards });
     Backbone.history.start();
   });
 

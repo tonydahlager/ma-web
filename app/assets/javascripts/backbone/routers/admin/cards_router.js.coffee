@@ -8,7 +8,7 @@ class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
     "index"    : "index"
     ":id/edit" : "edit"
     ":id"      : "show"
-    ".*"        : "index"
+    ".*"       : "index"
 
   new: ->
     @view = new Varkek.Admin.Views.Cards.New(collection: @cards)
@@ -19,12 +19,11 @@ class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
     $('#cards').html(@view.render().el)
 
   show: (id) ->
-    # post = @posts.get(id)
-    # @view = new Bbex.Views.Posts.ShowView(model: post)
-    # $("#posts").html(@view.render().el)
+    card = @cards.get(id)
+    @view = new Varkek.Admin.Views.Cards.Show(model: card)
+    $("#cards").html(@view.render().el)
 
   edit: (id) ->
-    # post = @posts.get(id)
-
-    # @view = new Bbex.Views.Posts.EditView(model: post)
-    # $("#posts").html(@view.render().el)
+    card = @cards.get(id)
+    @view = new Varkek.Admin.Views.Cards.Edit(model: card)
+    $("#cards").html(@view.render().el)

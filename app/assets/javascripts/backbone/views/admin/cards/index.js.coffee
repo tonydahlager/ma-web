@@ -12,7 +12,7 @@ class Varkek.Admin.Views.Cards.Index extends Backbone.View
 		@options.cards.each(@addOne)
 
 	addOne: (model) =>
-		view = new Varkek.Admin.Views.Cards.Card({ model: model })
+		view = new Varkek.Admin.Views.Cards.IndexCard({ model: model })
 		$(@el).append(view.render().el)
 
 	render: =>
