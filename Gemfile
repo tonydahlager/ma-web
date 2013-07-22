@@ -1,38 +1,33 @@
 source 'https://rubygems.org'
 
 gem 'rails',   '4.0.0'
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'devise',  github: 'plataformatec/devise', branch: 'rails4'
-gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
-
-group :test, :development do
-  gem 'pry'
-  gem 'rspec-rails'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  # gem 'mongoid-rspec', github: 'evansagge/mongoid-rspec'
-
-  gem 'guard-rspec'
-end
 
 gem 'sass-rails',   '~> 4.0.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'jbuilder',     '~> 1.2'
-
-
-gem 'rails-backbone', github: 'westonplatter/backbone-rails'
-gem 'marionette-rails'
-
-
 gem 'turbolinks'
+
+group :test, :development do
+  gem 'rspec',       '~> 2.14.0'
+  gem 'rspec-rails', '~> 2.14.0', github: 'rspec/rspec-rails', branch: '2-14-maintenance'
+  gem 'mongoid-rspec'
+  gem 'pry'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+end
 gem 'bootstrap-sass'
 
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
+gem 'devise', '~> 3.0.0'
+gem 'rails-backbone', github: 'westonplatter/backbone-rails'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
 
-group :doc do
-  gem 'sdoc', require: false
-end
+gem 'rabl'
