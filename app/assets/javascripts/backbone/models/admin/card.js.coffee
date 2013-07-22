@@ -1,6 +1,6 @@
 class Varkek.Admin.Models.Card extends Backbone.Model
-	# paramRoot: 'card'
+	paramRoot: 'card'
 
-class Varkek.Admin.Collections.CardsCollection extends Backbone.Collection
+class Varkek.Admin.Collections.CardCollection extends Backbone.Collection
   model: Varkek.Admin.Models.Card
   url: '/admin/cards'

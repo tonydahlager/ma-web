@@ -1,6 +1,6 @@
 class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
   initialize: (options) ->
-    @cards = new Varkek.Admin.Collections.CardsCollection()
+    @cards = new Varkek.Admin.Collections.CardCollection()
     @cards.reset options.cards
 
   routes:
@@ -16,7 +16,7 @@ class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
 
   index: ->
     @view = new Varkek.Admin.Views.Cards.Index(cards: @cards)
-    $("#cards").html(@view.render().el)
+    $('#cards').html(@view.render().el)
 
   show: (id) ->
     # post = @posts.get(id)
