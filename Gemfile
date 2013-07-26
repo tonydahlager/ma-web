@@ -17,9 +17,10 @@ group :test, :development do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'guard-rspec'
+  gem 'jasmine-rails'
 end
-gem 'bootstrap-sass'
 
+gem 'bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
 gem 'mongoid', github: 'mongoid/mongoid'
@@ -31,5 +32,3 @@ gem 'rabl'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
-
-

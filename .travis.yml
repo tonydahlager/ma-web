@@ -4,7 +4,14 @@ rvm:
   - 1.9.3
   - 2.0.0
 
-services: 
+services:
   - mongodb
 
-# before_script: cp config/mongoid.example.yml config/mongoid.yml
+# -- use the default test execution task, which is:
+# script: bundle exec rake
+#
+# -- more info, http://about.travis-ci.org/docs/user/languages/ruby/#Default-Test-Script
+
+
+# http://about.travis-ci.org/docs/user/gui-and-headless-browsers/#Using-PhantomJS
+after_script: bundle exec rake spec:javascript
