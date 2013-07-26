@@ -18,6 +18,6 @@
 //= require backbone
 //= require backbone_rails_sync
 //= require backbone_datalink
-//= require backbone/varkek
 //= require backbone.marionette
+//= require backbone/varkek
 //= require_tree .

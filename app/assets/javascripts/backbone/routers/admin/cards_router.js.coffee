@@ -15,8 +15,9 @@ class Varkek.Admin.Routers.CardsRouter extends Backbone.Router
     $("#cards").html(@view.render().el)
 
   index: ->
-    @view = new Varkek.Admin.Views.Cards.Index(cards: @cards)
-    $('#cards').html(@view.render().el)
+    @view = new Varkek.Admin.Views.Cards.Index(collection: @cards)
+    # $('#cards').html(@view.render().el)
+    @view.render()
 
   show: (id) ->
     card = @cards.get(id)
