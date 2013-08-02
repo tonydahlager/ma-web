@@ -16,8 +16,6 @@
 //= require bootstrap
 //= require underscore
 //= require backbone
-//= require backbone_rails_sync
-//= require backbone_datalink
 //= require backbone.marionette
-//= require backbone/varkek
+//= require backbone/admin/admin_app
 //= require_tree .

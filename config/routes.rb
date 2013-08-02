@@ -2,6 +2,7 @@ Varkek::Application.routes.draw do
 
   namespace :admin do
     resources :cards
+    resources :users
   end
 
   resources :cards, only: [:index, :show]
