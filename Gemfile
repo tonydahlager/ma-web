@@ -26,7 +26,7 @@ gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'devise', '~> 3.0.0'
-gem 'rails-backbone', github: 'westonplatter/backbone-rails'
+gem 'railsy_backbone', github: 'westonplatter/railsy_backbone'
 gem 'marionette-rails'
 gem 'rabl'
 
