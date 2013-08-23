@@ -1,27 +1,14 @@
-<table>
-  <thead>
-    <tr>
-      <th>Kind</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class='panel panel-default'>
+  <div class='panel-heading'>Links</div>
+  <!-- <div class='panel-body'></div> -->
+  <ul class='list-group'>
     <% links.each do |link| %>
-      <tr>
-        <td><%= link.kind %></td>
-        <td><%= link.content %></td>
-        <td><%= link_to 'Show', [:admin, topic, link] %></td>
-        <td><%= link_to 'Edit', edit_admin_topic_link_path(topic, link) %></td>
-        <td><%= link_to 'Destroy', [:admin, topic, link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li class='list-group-item'>
+        <span class="label label-info"><%= link.kind %></span>&nbsp;&nbsp;<%= link.content %>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Link', new_admin_topic_link_path(topic) %>
+    <li class='list-group-item'>
+      <%= button_to 'New Link', new_admin_topic_link_path(topic), {method: :get, class: 'btn btn-success btn-sm'} %>
+    </li>
+  </ul>
+</div>

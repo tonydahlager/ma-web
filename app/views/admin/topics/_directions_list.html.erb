@@ -1,29 +1,18 @@
-<table>
-  <thead>
-    <tr>
-      <th>Order</th>
-      <th>Approach</th>
-      <th>Content</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% directions.each do |direction| %>
-      <tr>
-        <td><%= direction.order %></td>
-        <td><%= direction.approach %></td>
-        <td><%= direction.content %></td>
-        <td><%= link_to 'Show', [:admin, topic, direction] %></td>
-        <td><%= link_to 'Edit', edit_admin_topic_direction_path(topic, direction) %></td>
-        <td><%= link_to 'Destroy', [:admin, topic, @direction], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class='panel panel-default'>
+  <div class='panel-heading'>Directions</div>
+  <!-- <div class='panel-body'></div> -->
+  <ul class='list-group'>
+    <% directions.sort_by(&:order).each do |direction| %>
+      <li class='list-group-item'>
+        <%= link_to 'Edit', edit_admin_topic_direction_path(topic, direction), {class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, topic, direction], {class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
+        <span class="label label-warning"><%= direction.order %></span>&nbsp;
+        <span class="label label-info"><%= direction.approach %></span>&nbsp; 
+        <%= direction.content %>
+      </li>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Direction', new_admin_topic_direction_path(@topic) %>
+    <li class='list-group-item'>
+      <%= button_to 'New Direction', new_admin_topic_direction_path(topic), {method: :get, class: 'btn btn-success btn-sm'} %>
+    </li>
+  </ul>
+</div>

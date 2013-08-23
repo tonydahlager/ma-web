@@ -8,26 +8,13 @@
   <%= @topic.description %>
 </p>
 
-
-<p>Bridges</p>
-<%= render partial: 'bridges_list', locals: {topic: @topic, bridges: @topic.bridges} %>
+<%= link_to 'Edit', edit_admin_topic_path(@topic), { class: 'btn btn-default btn-sm'} %>
+<%= link_to 'Back to all Topics', admin_topics_path, {class: 'btn btn-default btn-sm'} %>
 <br>
-<br>
-
-<p>Questions</p>
-<%= render partial: 'questions_list', locals: {topic: @topic, questions: @topic.questions} %>
 <br>
 <br>
 
-<p>Directions</p>
-<%= render partial: 'directions_list', locals: {topic: @topic, directions: @topic.directions} %>
-<br>
-<br>
-
-<p>Links</p>
-<%= render partial: 'links_list', locals: {topic: @topic, links: @topic.links} %>
-<br>
-<br>
-
-<%= link_to 'Edit', edit_admin_topic_path(@topic) %> |
-<%= link_to 'Back', admin_topics_path %>
+<%= render partial: 'bridges_list',     locals: {topic: @topic, bridges: @topic.bridges} %>
+<%= render partial: 'questions_list',   locals: {topic: @topic, questions: @topic.questions} %>
+<%= render partial: 'directions_list',  locals: {topic: @topic, directions: @topic.directions} %>
+<%= render partial: 'links_list',       locals: {topic: @topic, links: @topic.links} %>
