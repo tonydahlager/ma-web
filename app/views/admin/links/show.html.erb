@@ -1,0 +1,12 @@
+<p>
+  <strong>Kind:</strong>
+  <%= @link.kind %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @link.content %>
+</p>
+
+<%= link_to 'Edit', edit_admin_topic_link_path(@topic, @link) %> |
+<%= link_to 'Back', [:admin, @topic] %>

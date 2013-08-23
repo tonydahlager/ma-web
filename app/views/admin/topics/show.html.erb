@@ -24,6 +24,10 @@
 <br>
 <br>
 
+<p>Links</p>
+<%= render partial: 'links_list', locals: {topic: @topic, links: @topic.links} %>
+<br>
+<br>
 
 <%= link_to 'Edit', edit_admin_topic_path(@topic) %> |
 <%= link_to 'Back', admin_topics_path %>

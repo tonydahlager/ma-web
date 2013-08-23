@@ -5,10 +5,12 @@ Varkek::Application.routes.draw do
       resources :bridges
       resources :questions
       resources :directions
+      resources :links
     end
     resources :users
   end
 
+  # nuke this
   resources :cards, only: [:index, :show]
 
   get "dashboard/index" # => 'dashboard#index'
