@@ -6,7 +6,6 @@ gem 'sass-rails',   '~> 4.0.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
-gem 'turbolinks'
 
 group :test, :development do
   gem 'rspec',       '~> 2.14.0'
