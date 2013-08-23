@@ -6,3 +6,4 @@
 .ruby-version
 .ruby-gemset
 /spec/tmp
+public/assets/*
