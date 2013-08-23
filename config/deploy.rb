@@ -14,11 +14,18 @@ set :user, 'deploy'
 set :use_sudo, false
 set :ssh_options, { forward_agent: true }
 default_run_options[:pty] = true
-
 set :scm,         :git
 set :repository,  'git@github.com:westonplatter/varkek-web.git'
-# set :deploy_to,   '/home/deploy/sites/varkek'
-# set :deploy_via,  :remote_cache
+
+
+# think602's notifications room
+require 'hipchat/capistrano'
+set :hipchat_token,       '48043dcd347f6ba6de724cab65b1a0'
+set :hipchat_room_name,   'notifications'
+set :hipchat_announce,    true # notify users?
+set(:hipchat_env)         {rails_env}
+
+
 
 # if you want to clean up old releases on each deploy uncomment this:
 # after 'deploy:restart', 'deploy:cleanup'
