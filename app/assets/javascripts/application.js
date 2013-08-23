@@ -12,9 +12,4 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
-//= require underscore
-//= require backbone
-//= require backbone.marionette
-//= require backbone/admin/admin_app
 //= require_tree .
