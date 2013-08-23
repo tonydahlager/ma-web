@@ -1,8 +1,8 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :card do
-    title 'Justice'
-    description 'What is justice'
+  factory :admin_topic, :class => 'Admin::Topic' do
+    title "MyString"
+    description "MyString"
   end
 end

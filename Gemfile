@@ -22,7 +22,7 @@ end
 
 gem 'bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
-gem 'devise_invitable', github: 'scambra/devise_invitable', branch: 'rails4'
+gem 'devise_invitable'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 gem 'devise', '~> 3.0.0'
