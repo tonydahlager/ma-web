@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 gem 'rails',   '4.0.0'
 
 gem 'sass-rails',   '~> 4.0.0'
@@ -20,12 +22,11 @@ group :test, :development do
   gem 'quiet_assets'
 end
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise_invitable'
-gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
-gem 'devise', '~> 3.0.0'
+gem 'devise'
 gem 'railsy_backbone'
 gem 'marionette-rails'
 gem 'rabl'
