@@ -19,6 +19,11 @@
 <br>
 <br>
 
+<p>Directions</p>
+<%= render partial: 'directions_list', locals: {topic: @topic, directions: @topic.directions} %>
+<br>
+<br>
+
 
 <%= link_to 'Edit', edit_admin_topic_path(@topic) %> |
 <%= link_to 'Back', admin_topics_path %>

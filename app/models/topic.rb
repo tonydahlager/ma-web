@@ -5,4 +5,5 @@ class Topic
   
   has_many :questions
   has_many :bridges
+  has_many :directions
 end

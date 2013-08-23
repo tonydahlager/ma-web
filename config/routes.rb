@@ -4,7 +4,7 @@ Varkek::Application.routes.draw do
     resources :topics do 
       resources :bridges
       resources :questions
-      # resources :directions
+      resources :directions
     end
     resources :users
   end

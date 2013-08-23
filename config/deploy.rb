@@ -10,8 +10,8 @@ require 'rvm/capistrano'
 set :rvm_type, :system
 
 set :application, 'varkek'
-set :user, 'deploy'
-set :use_sudo, false
+set :user,        'deploy'
+set :use_sudo,    false
 set :ssh_options, { forward_agent: true }
 default_run_options[:pty] = true
 set :scm,         :git
@@ -24,7 +24,6 @@ set :hipchat_token,       '48043dcd347f6ba6de724cab65b1a0'
 set :hipchat_room_name,   'notifications'
 set :hipchat_announce,    true # notify users?
 set(:hipchat_env)         {rails_env}
-
 
 
 # if you want to clean up old releases on each deploy uncomment this:
@@ -49,7 +48,7 @@ after 'bundle:install', 'symlink_database_yml'
 namespace :mongoid do
   desc "Create MongoDB indexes"
   task :index do
-    run "cd #{current_path} && #{bundle_cmd} exec rake db:mongoid:create_indexes", once: true
+    # run "cd #{current_path} && #{bundle_cmd} exec rake db:mongoid:create_indexes", once: true
   end
 end
 
