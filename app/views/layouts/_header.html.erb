@@ -1,24 +1,36 @@
-<%= link_to 'Varkek', '/cards', class: 'brand' %>
-<% if user_signed_in? %>
-  <ul class='nav'>
-    <li>
-      <%= link_to 'Cards', cards_path %>
-    </li>
-  </ul>
-  <div class='pull-right'>
-    <ul class='nav'>
-      <li>
-        <%= link_to 'Edit account', edit_user_registration_path(current_user) %>
-      </li>
-      <li>
-        <%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>
-      </li>      
+<!-- copied from -->
+<!-- http://getbootstrap.com/components/#navbar -->
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation" id="header">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Mobile Apologetics</a>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Topics', admin_topics_path %>
+        </li>
+      <% else %>
+        <!-- non authed users go here -->
+      <% end %>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Edit account', edit_user_registration_path(current_user) %>
+        </li>
+        <li>
+          <%= link_to 'Logout', destroy_user_session_path, method: 'delete' %>
+        </li>
+      <% end %>
     </ul>
   </div>
-<% else %>
-  <ul class='nav'>
-    <li>
-      <%= link_to 'Cards', cards_path %>
-    </li>
-  </ul>
-<% end %>
+</nav>
