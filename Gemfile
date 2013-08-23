@@ -18,6 +18,7 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'guard-rspec'
   gem 'jasmine-rails'
+  gem 'quiet_assets'
 end
 
 gem 'bootstrap-sass'

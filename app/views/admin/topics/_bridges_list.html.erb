@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% bridges.each do |bridge| %>
+      <tr>
+        <td><%= bridge.content %></td>
+        <td><%= link_to 'Show', [:admin, topic, bridge] %></td>
+        <td><%= link_to 'Edit', edit_admin_topic_bridge_path(topic, bridge) %></td>
+        <td><%= link_to 'Destroy', [:admin, topic, bridge], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Bridge', new_admin_topic_bridge_path(topic) %>

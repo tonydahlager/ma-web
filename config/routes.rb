@@ -1,11 +1,11 @@
 Varkek::Application.routes.draw do
-
+  
   namespace :admin do
-    resources :topics
-  end
-
-  namespace :admin do
-    resources :topics
+    resources :topics do 
+      resources :bridges
+      resources :questions
+      # resources :directions
+    end
     resources :users
   end
 

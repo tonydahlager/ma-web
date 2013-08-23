@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @topic.title %>
@@ -9,6 +7,18 @@
   <strong>Description:</strong>
   <%= @topic.description %>
 </p>
+
+
+<p>Bridges</p>
+<%= render partial: 'bridges_list', locals: {topic: @topic, bridges: @topic.bridges} %>
+<br>
+<br>
+
+<p>Questions</p>
+<%= render partial: 'questions_list', locals: {topic: @topic, questions: @topic.questions} %>
+<br>
+<br>
+
 
 <%= link_to 'Edit', edit_admin_topic_path(@topic) %> |
 <%= link_to 'Back', admin_topics_path %>

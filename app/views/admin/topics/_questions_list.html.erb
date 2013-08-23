@@ -1,0 +1,25 @@
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% questions.each do |question| %>
+      <tr>
+        <td><%= question.content %></td>
+        <td><%= link_to 'Show', [:admin, topic, question] %></td>
+        <td><%= link_to 'Edit', edit_admin_topic_question_path(topic, question) %></td>
+        <td><%= link_to 'Destroy', [:admin, topic, question], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Question', new_admin_topic_question_path(topic) %>
