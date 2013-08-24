@@ -12,3 +12,16 @@
  *= require ./../bootstrap_and_overrides
  *= require_tree .
  */
+
+@import "bootstrap_and_overrides";
+
+.ma-text-edit {
+  width: 50%;
+  height: 200px;
+}
+
+.ma-link {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-small;
+}

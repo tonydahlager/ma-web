@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :order %><br>
     <%= f.number_field :order %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :approach %><br>
     <%= f.text_field :approach %>
   </div>
-  <div class="field">
+  
+  <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content, class: 'ma-text-edit' %>
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'ma-link' %>
   </div>
 <% end %>

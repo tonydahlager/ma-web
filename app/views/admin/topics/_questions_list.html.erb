@@ -4,6 +4,8 @@
   <ul class='list-group'>
     <% questions.each do |question| %>
       <li class='list-group-item'>
+        <%= link_to 'Edit', edit_admin_topic_question_path(topic, question), {class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, topic, question], {class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
         <%= question.content %>
       </li>
     <% end %>

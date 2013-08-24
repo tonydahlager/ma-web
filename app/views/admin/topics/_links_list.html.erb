@@ -4,6 +4,8 @@
   <ul class='list-group'>
     <% links.each do |link| %>
       <li class='list-group-item'>
+        <%= link_to 'Edit', edit_admin_topic_link_path(topic, link), {class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, topic, link], {class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
         <span class="label label-info"><%= link.kind %></span>&nbsp;&nbsp;<%= link.content %>
       </li>
     <% end %>

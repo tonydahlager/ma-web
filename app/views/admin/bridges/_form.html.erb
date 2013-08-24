@@ -11,11 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :content %><br>
-    <%= f.text_field :content %>
+    <%= f.text_area :content, class: 'ma-text-edit' %>
   </div>
+  
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-default' %>
   </div>
 <% end %>

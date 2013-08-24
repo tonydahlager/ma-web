@@ -1,12 +1,8 @@
-<h1>Listing admin_topics</h1>
-
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Title</th>
       <th>Description</th>
-      <th></th>
-      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -16,9 +12,11 @@
       <tr>
         <td><%= topic.title %></td>
         <td><%= topic.description %></td>
-        <td><%= link_to 'Show', [:admin, topic] %></td>
-        <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', [:admin, topic], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', [:admin, topic], { class: 'btn btn-default btn-small'} %>
+          <%= link_to 'Edit', edit_admin_topic_path(topic), { class: 'btn btn-default btn-small'} %>
+          <%= link_to 'Destroy', [:admin, topic], {method: :delete, 'data-conform' => 'Are you sure?', class: 'btn btn-default btn-small'} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_admin_topic_path %>
+<%= link_to 'New Topic', new_admin_topic_path, { class: 'btn btn-default btn-small'} %>
