@@ -8,6 +8,7 @@ Varkek::Application.routes.draw do
       resources :links
     end
     resources :users
+    root to: 'topics#index'
   end
 
   # nuke this
