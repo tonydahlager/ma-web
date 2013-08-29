@@ -13,7 +13,8 @@
         <td><%= topic.title %></td>
         <td><%= topic.description %></td>
         <td>
-          <%= link_to 'Show', [:admin, topic], { class: 'btn btn-default btn-small'} %>
+          <%= link_to 'Show', [:admin, topic], { class: 'ma-link'} %>
+          <%= link_to 'PDF',  admin_topic_path(topic, format: 'pdf'), { class: 'ma-link'} %>
           <%= link_to 'Edit', edit_admin_topic_path(topic), { class: 'btn btn-default btn-small'} %>
           <%= link_to 'Destroy', [:admin, topic], {method: :delete, 'data-conform' => 'Are you sure?', class: 'btn btn-default btn-small'} %>
         </td>

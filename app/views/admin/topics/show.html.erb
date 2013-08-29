@@ -8,8 +8,9 @@
   <%= @topic.description %>
 </p>
 
-<%= link_to 'Edit', edit_admin_topic_path(@topic), { class: 'btn btn-default btn-sm'} %>
-<%= link_to 'Back to all Topics', admin_topics_path, {class: 'btn btn-default btn-sm'} %>
+<%= link_to 'PDF', admin_topic_path(@topic, format: 'pdf'), { class: 'ma-link'} %>
+<%= link_to 'Edit', edit_admin_topic_path(@topic), { class: 'ma-link'} %>
+<%= link_to 'Back to all Topics', admin_topics_path, {class: 'ma-link'} %>
 <br>
 <br>
 <br>
