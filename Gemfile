@@ -30,6 +30,8 @@ gem 'devise'
 gem 'railsy_backbone'
 gem 'marionette-rails'
 gem 'rabl'
+gem 'prawn', '~> 1.0.0.rc2'
+
 
 gem 'capistrano'
 gem 'rvm-capistrano'
