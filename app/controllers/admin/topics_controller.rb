@@ -9,6 +9,50 @@ class Admin::TopicsController < ApplicationController
 
   # GET /admin/topics/1
   def show
+    respond_to do |f|
+      f.html  { render }
+      
+      f.pdf {
+        
+        pdf = Prawn::Document.new
+        pdf.text "Title: #{@topic.title}"
+        pdf.text "Description: #{@topic.description}"
+        
+        pdf.move_down 20
+        pdf.text "Bridges"
+        pdf.move_down 2
+        @topic.bridges.each_with_index do |bridge, index|
+          pdf.text "#{index} - #{bridge.content}"
+          pdf.move_down 2
+        end
+        
+        pdf.move_down 20
+        pdf.text "Questions"
+        pdf.move_down 2
+        @topic.questions.each_with_index do |question, index|
+          pdf.text "#{index} - #{question.content}"
+          pdf.move_down 2
+        end
+        
+        pdf.move_down 20
+        pdf.text "Directions"
+        pdf.move_down 2
+        @topic.directions.each_with_index do |direction, index|
+          pdf.text "#{index} - (Order #{direction.order}) #{direction.approach}"
+          pdf.move_down 2
+        end
+        
+        pdf.move_down 20
+        pdf.text "Links"
+        pdf.move_down 2
+        @topic.links.each_with_index do |link, index|
+          pdf.text "#{index} - #{link.content}"
+          pdf.move_down 2
+        end
+        
+        send_data pdf.render, type: "application/pdf", disposition: "inline"
+      }
+    end
   end
 
   # GET /admin/topics/new
