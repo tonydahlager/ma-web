@@ -38,7 +38,7 @@ class Admin::TopicsController < ApplicationController
         pdf.text "Directions"
         pdf.move_down 2
         @topic.directions.each_with_index do |direction, index|
-          pdf.text "#{index} - (Order #{direction.order}) #{direction.approach}"
+          pdf.text "#{index} - (Order #{direction.order}) #{direction.approach} - #{direction.content}"
           pdf.move_down 2
         end
         
