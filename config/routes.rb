@@ -1,6 +1,8 @@
 Varkek::Application.routes.draw do
   
   namespace :admin do
+    resources :topic_groups
+    
     resources :topics do 
       resources :bridges
       resources :questions

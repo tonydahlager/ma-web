@@ -1,0 +1,21 @@
+<%= form_for([:admin, @topic_group], role: 'form') do |f| %>
+  <% if @topic_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic_group.errors.count, "error") %> prohibited this admin_topic_generator from being saved:</h2>
+
+      <ul>
+      <% @topic_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'ma-link' %>
+  </div>
+<% end %>
