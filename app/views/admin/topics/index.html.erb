@@ -15,7 +15,7 @@
         <td>
           <%= link_to 'Edit', [:admin, topic], { class: 'ma-link'} %>
           <%= link_to 'PDF',  admin_topic_path(topic, format: 'pdf'), { class: 'ma-link'} %>
-          <%= link_to 'Destroy', [:admin, topic], {method: :delete, 'data-conform' => 'Are you sure?', class: 'btn btn-default btn-small'} %>
+          <%= link_to 'Destroy', [:admin, topic], {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
         </td>
       </tr>
     <% end %>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_admin_topic_path, { class: 'btn btn-default btn-small'} %>
+<%= link_to 'New Topic', new_admin_topic_path, { class: 'ma-link'} %>

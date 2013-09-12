@@ -1,6 +1,4 @@
-<h1>Topic Groups</h1>
-
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Title</th>
@@ -14,9 +12,11 @@
     <% @topic_groups.each do |topic_group| %>
       <tr>
         <td><%= topic_group.title %></td>
-        <td><%= link_to 'Show', [:admin, topic_group] %></td>
-        <td><%= link_to 'Edit', edit_admin_topic_group_path(topic_group) %></td>
-        <td><%= link_to 'Destroy', [:admin, topic_group], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to 'Show', [:admin, topic_group], { class: 'ma-link'} %>
+          <%= link_to 'Edit', edit_admin_topic_group_path(topic_group), { class: 'ma-link'} %>
+          <%= link_to 'Destroy', [:admin, topic_group], { method: :delete, 'data-confirm' => 'Are you sure?', class: 'ma-link'} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Topic Group', new_admin_topic_group_path %>
+<%= link_to 'New Topic Group', new_admin_topic_group_path, { class: 'ma-link'} %>
