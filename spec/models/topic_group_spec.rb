@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Topic do
+describe TopicGroup do
   it { should have_many :topic_group_joins }
 end
