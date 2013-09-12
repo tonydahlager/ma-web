@@ -1,0 +1,27 @@
+<h1>Topic Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @topic_groups.each do |topic_group| %>
+      <tr>
+        <td><%= topic_group.title %></td>
+        <td><%= link_to 'Show', [:admin, topic_group] %></td>
+        <td><%= link_to 'Edit', edit_admin_topic_group_path(topic_group) %></td>
+        <td><%= link_to 'Destroy', [:admin, topic_group], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Topic Group', new_admin_topic_group_path %>
