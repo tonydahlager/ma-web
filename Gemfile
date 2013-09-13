@@ -22,7 +22,7 @@ group :test, :development do
   gem 'quiet_assets'
 end
 
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass', branch: '3'
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'devise_invitable'
 gem 'bson_ext'

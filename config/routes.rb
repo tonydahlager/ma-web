@@ -1,11 +1,14 @@
 Varkek::Application.routes.draw do
   
   namespace :admin do
+    resources :topic_groups
+    
     resources :topics do 
       resources :bridges
       resources :questions
       resources :directions
       resources :links
+      resources :quotes
     end
     resources :users
     root to: 'topics#index'

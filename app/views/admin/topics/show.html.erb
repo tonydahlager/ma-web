@@ -8,6 +8,10 @@
   <%= @topic.description %>
 </p>
 
+<%= list_group_topic_names(@topic).html_safe %>
+
+<br />
+
 <%= link_to 'PDF', admin_topic_path(@topic, format: 'pdf'), { class: 'ma-link'} %>
 <%= link_to 'Edit', edit_admin_topic_path(@topic), { class: 'ma-link'} %>
 <%= link_to 'Back to all Topics', admin_topics_path, {class: 'ma-link'} %>
@@ -19,3 +23,4 @@
 <%= render partial: 'questions_list',   locals: {topic: @topic, questions: @topic.questions} %>
 <%= render partial: 'directions_list',  locals: {topic: @topic, directions: @topic.directions} %>
 <%= render partial: 'links_list',       locals: {topic: @topic, links: @topic.links} %>
+<%= render partial: 'quotes_list',      locals: {topic: @topic, quotes: @topic.quotes} %>

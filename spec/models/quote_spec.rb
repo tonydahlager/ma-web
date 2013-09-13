@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Direction do
+describe Quote do
 end
