@@ -2,7 +2,7 @@ class Topic
   include Mongoid::Document
   field :title, type: String
   field :description, type: String
-  field :topic_group_ids, type: Array
+  field :topic_group_ids, type: Array, default: []
 
   has_many :questions
   has_many :bridges
@@ -10,6 +10,7 @@ class Topic
   has_many :links
   
   def topic_groups 
-    TopicGroup.where(:_id.in => topic_group_ids)
+    topic_groups = TopicGroup.where(:_id.in => topic_group_ids)
   end
+  
 end

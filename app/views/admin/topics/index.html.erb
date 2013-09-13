@@ -1,22 +1,22 @@
 <table class='table'>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th></th>
+      <th class='col-md-2'></th>
+      <th class='col-md-4'>Title</th>
+      <th class='col-md-3'>Groups</th>
     </tr>
   </thead>
 
   <tbody>
     <% @topics.each do |topic| %>
       <tr>
-        <td><%= topic.title %></td>
-        <td><%= topic.description %></td>
         <td>
           <%= link_to 'Edit', [:admin, topic], { class: 'ma-link'} %>
           <%= link_to 'PDF',  admin_topic_path(topic, format: 'pdf'), { class: 'ma-link'} %>
           <%= link_to 'Destroy', [:admin, topic], {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
         </td>
+        <td><%= topic.title %></td>
+        <td><%= display_group_topic_names(topic).html_safe %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,7 @@
 
 <br>
 
-<%= link_to 'New Topic', new_admin_topic_path, { class: 'ma-link'} %>
+<div class='sub-table-links'>
+  <%= link_to 'New Topic', new_admin_topic_path, { class: 'ma-link'} %>
+</div>
+
