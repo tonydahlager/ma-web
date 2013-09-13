@@ -9,7 +9,7 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
@@ -19,6 +19,18 @@
     <%= f.label :description %>
     <%= f.text_field :description, class: 'form-control' %>
   </div>
+  
+  <br />
+  
+  <% TopicGroup.all.each do |tg| %>
+    <div class="checkbox">
+      <label>
+        <%= check_box_tag "topic[topic_group_ids][]", tg.id.to_s, @topic.topic_group_ids.include?(tg.id.to_s), { class: 'ma-link' } %><%= tg.title %><br>
+      </label>
+    </div>
+  <% end %>
+  
+  <br />
   
   <div class="form-group">
     <%= f.submit class: 'ma-link' %>

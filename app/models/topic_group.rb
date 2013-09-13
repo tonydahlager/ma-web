@@ -2,9 +2,7 @@ class TopicGroup
   include Mongoid::Document
   field :title, type: String
   
-  has_many :topic_group_joins
-  
   def topics
-    Topic.where(id: topic_group_joins.map(&:topic_id))
+    Topic.any_in(topic_group_ids: self.id.to_s)
   end
 end
