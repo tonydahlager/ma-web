@@ -99,7 +99,17 @@ module Admin
 
       # Only allow a trusted parameter "white list" through.
       def topic_params
-        params.require(:topic).permit(:title, :description)
+        hash  = params.require(:topic).permit(:title, :description)
+        
+        # OBJECTIVE - come to 2 situations
+        # 1. "topic_group_ids" => ["1", "2"]
+        # 2. "topic_group_ids" => []
+        # 
+        tgids = params.require(:topic).permit(:topic_group_ids => [])
+        topic_group_ids = tgids.empty? ? {"topic_group_ids" => []} : tgids
+        new_hash = hash.merge(topic_group_ids)
+    
+        new_hash
       end
   
   end
