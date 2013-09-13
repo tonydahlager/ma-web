@@ -8,6 +8,7 @@ class Topic
   has_many :bridges
   has_many :directions
   has_many :links
+  has_many :quotes
   
   def topic_groups 
     topic_groups = TopicGroup.where(:_id.in => topic_group_ids)
