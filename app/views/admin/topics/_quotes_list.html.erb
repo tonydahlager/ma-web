@@ -1,0 +1,16 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>Quotes</div>
+  <!-- <div class='panel-body'></div> -->
+  <ul class='list-group'>
+    <% quotes.each do |quote| %>
+      <li class='list-group-item'>
+        <%= link_to 'Edit', edit_admin_topic_quote_path(topic, quote), {class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, topic, quote], {class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
+        <span class="label label-info"><%= quote.author %></span>&nbsp;&nbsp;<%= quote.content %>
+      </li>
+    <% end %>
+    <li class='list-group-item'>
+      <%= button_to 'New Quote', new_admin_topic_quote_path(topic), {method: :get, class: 'btn btn-success btn-sm'} %>
+    </li>
+  </ul>
+</div>
