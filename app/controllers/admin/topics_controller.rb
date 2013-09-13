@@ -1,5 +1,5 @@
 module Admin
-  class TopicsController < ::ApplicationController
+  class TopicsController < BaseController
   
     before_action :set_topic, only: [:show, :edit, :update, :destroy]
 

@@ -1,5 +1,5 @@
 module Admin
-  class TopicGroupsController < ::ApplicationController
+  class TopicGroupsController < BaseController
   
     before_action :set_topic_group, only: [:show, :edit, :update, :destroy]
 
