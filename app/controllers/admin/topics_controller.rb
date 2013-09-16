@@ -19,10 +19,16 @@ module Admin
           pdf.text "Title: #{@topic.title}"
           pdf.text "Description: #{@topic.description}"
           
+          pdf.move_down 10
+          pdf.text "Topic Groups:"
+          @topic.topic_groups.each do |topic_group|
+            pdf.text " =>  #{topic_group.title}"
+          end
+          
           pdf.move_down 20
           pdf.text "Bridges"
           pdf.move_down 2
-          @topic.bridges.each_with_index do |bridge, index|
+          @topic.bridges.to_enum.with_index(1).each do |bridge, index|
             pdf.text "#{index} - #{bridge.content}"
             pdf.move_down 2
           end
@@ -30,7 +36,7 @@ module Admin
           pdf.move_down 20
           pdf.text "Questions"
           pdf.move_down 2
-          @topic.questions.each_with_index do |question, index|
+          @topic.questions.to_enum.with_index(1).each do |question, index|
             pdf.text "#{index} - #{question.content}"
             pdf.move_down 2
           end
@@ -38,15 +44,15 @@ module Admin
           pdf.move_down 20
           pdf.text "Directions"
           pdf.move_down 2
-          @topic.directions.each_with_index do |direction, index|
-            pdf.text "#{index} - (Order #{direction.order}) #{direction.approach} - #{direction.content}"
+          @topic.directions.asc(:order).each_with_index do |direction, index|
+            pdf.text "#{direction.order} - #{direction.approach} - #{direction.content}"
             pdf.move_down 2
           end
           
           pdf.move_down 20
           pdf.text "Links"
           pdf.move_down 2
-          @topic.links.each_with_index do |link, index|
+          @topic.links.to_enum.with_index(1).each do |link, index|
             pdf.text "#{index} - #{link.content}"
             pdf.move_down 2
           end
