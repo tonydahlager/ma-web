@@ -19,6 +19,12 @@ module Admin
           pdf.text "Title: #{@topic.title}"
           pdf.text "Description: #{@topic.description}"
           
+          pdf.move_down 10
+          pdf.text "Topic Groups:"
+          @topic.topic_groups.each do |topic_group|
+            pdf.text " =>  #{topic_group.title}"
+          end
+          
           pdf.move_down 20
           pdf.text "Bridges"
           pdf.move_down 2
