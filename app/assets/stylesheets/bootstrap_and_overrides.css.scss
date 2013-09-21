@@ -1,4 +1,5 @@
 @import "bootstrap";
+$footer_padding: 60px;
 
 html, body {
   height: 100%;
@@ -7,18 +8,12 @@ html, body {
 /* Wrapper for page content to push down footer */
 #wrap {
   min-height: 100%;
-  height: auto !important;
   height: 100%;
-  /* Negative indent footer by it's height */
-  margin: 0 auto -60px;
-}
-
-#header {
-  padding-bottom: 20px;
+  margin: 0 auto (-1)*$footer_padding;
 }
 
 #push, #footer {
-  height: 60px;
+  height: $footer_padding;
 }
 
 #footer {
