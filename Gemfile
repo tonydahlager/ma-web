@@ -11,7 +11,7 @@ gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec',       '~> 2.14.0'
-  gem 'rspec-rails', '~> 2.14.0', github: 'rspec/rspec-rails', branch: '2-14-maintenance'
+  gem 'rspec-rails', '~> 2.14.0', :github => 'rspec/rspec-rails', :branch => '2-14-maintenance'
   gem 'mongoid-rspec'
   gem 'pry'
   gem 'database_cleaner'
@@ -20,10 +20,11 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'jasmine-rails'
   gem 'quiet_assets'
+  gem 'foreman'
 end
 
-gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bootstrap-sass', :github => 'thomas-mcdonald/bootstrap-sass'
+gem 'mongoid', :github => 'mongoid/mongoid'
 gem 'devise_invitable'
 gem 'bson_ext'
 gem 'devise'
