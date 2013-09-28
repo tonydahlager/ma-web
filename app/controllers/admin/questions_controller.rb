@@ -3,13 +3,12 @@ module Admin
     before_action :set_topic # all actions
     before_action :set_question, only: [:show, :edit, :update, :destroy]
 
-    # GET /admin/questions
+    # GET /admin/topics/123abc/questions
     def index
-      @questions = Question.all
-      # @questions = @topic.questions
+      @questions = @topic.questions      
     end
 
-    # GET /admin/questions/1
+    # GET /admin/topics/123abc/questions/321xyz
     def show
     end
 
@@ -56,7 +55,7 @@ module Admin
       
       # Use callbacks to share common setup or constraints between actions.
       def set_question
-        @question = Question.find(params[:id])
+        @question = @topic.questions.find(params[:id])
       end
 
       # Only allow a trusted parameter "white list" through.
