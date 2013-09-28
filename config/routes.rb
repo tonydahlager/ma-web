@@ -4,11 +4,10 @@ Varkek::Application.routes.draw do
     resources :topic_groups
     
     resources :topics do 
-      resources :bridges
-      resources :questions
-      resources :directions
-      resources :links
-      resources :quotes
+      resources :questions do 
+        resources :responses
+        resources :directions
+      end
     end
     resources :users
     root to: 'topics#index'

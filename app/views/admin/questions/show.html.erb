@@ -14,13 +14,9 @@
 <br />
 <br />
 
-<div>
-  <p>response</p>
-</div>
+<%= render partial: 'responses', locals: { responses: @question.responses } %>
 
-<div>
-  <p>direction</p>
-</div>
+<%= render partial: 'directions', locals: { directions: @question.directions } %>
 
 <div>
   <p>transition</p>

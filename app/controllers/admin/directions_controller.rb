@@ -1,50 +1,51 @@
 module Admin
   class DirectionsController < BaseController    
     before_action :set_topic
-    before_action :set_direction, only: [:show, :edit, :update, :destroy]
+    before_action :set_question
+    before_action :set_direction, except: [:index, :new, :create]
 
-    # GET /directions
+    # GET /admin/topics/abc123/questions/xyz789/directions
     def index
-      @directions = @topic.directions
+      @directions = @question.directions
     end
 
-    # GET /directions/1
+    # GET /admin/topics/abc123/questions/xyz789/directions/ghi000
     def show
     end
 
-    # GET /directions/new
+    # GET /admin/topics/abc123/questions/xyz789/directions/new
     def new
       @direction = Direction.new
     end
 
-    # GET /directions/1/edit
+    # GET /admin/topics/abc123/questions/xyz789/directions/ghi000/edit
     def edit
     end
 
-    # POST /directions
+    # POST /admin/topics/abc123/questions/xyz789/directions
     def create
-      @direction = @topic.directions.build(direction_params)
+      @direction = @question.directions.build(direction_params)
 
       if @direction.save
-        redirect_to [:admin, @topic], notice: 'Direction was successfully created.'
+        redirect_to [:admin, @topic, @question], notice: 'Direction was successfully created.'
       else
         render action: 'new'
       end
     end
 
-    # PATCH/PUT /directions/1
+    # PATCH/PUT /admin/topics/abc123/questions/xyz789/directions/ghi000
     def update
       if @direction.update(direction_params)
-        redirect_to [:admin, @topic], notice: 'Direction was successfully updated.'
+        redirect_to [:admin, @topic, @question], notice: 'Direction was successfully updated.'
       else
         render action: 'edit'
       end
     end
 
-    # DELETE /directions/1
+    # DELETE /admin/topics/abc123/questions/xyz789/directions/ghi000
     def destroy
       @direction.destroy
-      redirect_to [:admin, @topic], notice: 'Direction was successfully destroyed.'
+      redirect_to [:admin, @topic, @question], notice: 'Direction was successfully destroyed.'
     end
 
     private
@@ -52,12 +53,14 @@ module Admin
         @topic = Topic.find(params[:topic_id])
       end
       
-      # Use callbacks to share common setup or constraints between actions.
+      def set_question
+        @question = @topic.questions.find(params[:question_id])
+      end
+      
       def set_direction
-        @direction = @topic.directions.find(params[:id])
+        @direction = @question.directions.find(params[:id])
       end
 
-      # Only allow a trusted parameter "white list" through.
       def direction_params
         params.require(:direction).permit(:order, :approach, :content)
       end

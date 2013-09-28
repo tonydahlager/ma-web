@@ -1,4 +1,4 @@
-<%= form_for([:admin, @topic, @direction]) do |f| %>
+<%= form_for([:admin, @topic, @question, @direction]) do |f| %>
   <% if @direction.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@direction.errors.count, "error") %> prohibited this direction from being saved:</h2>
