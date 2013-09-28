@@ -4,5 +4,5 @@ class Direction
   field :approach, type: String
   field :content, type: String
   
-  belongs_to :topic
+  embedded_in :question
 end

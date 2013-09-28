@@ -2,5 +2,10 @@ class Question
   include Mongoid::Document
   field :content, type: String
   
-  belongs_to :topic
+  embedded_in :topic
+  
+  embeds_many :responses
+  embeds_many :directions
+  embeds_many :transitions
 end
+
