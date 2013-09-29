@@ -1,0 +1,16 @@
+<div class="panel panel-default" data-id="<%= direction.id.to_s %>" data-object="direction">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <!-- data-parent="#accordion-responses" makes only 1 element show at once -->
+      <a class="accordion-toggle" data-toggle="collapse" href="#directions-<%= direction.id %>">
+        <%= direction.approach ? direction.approach : "No Approach Type" %> | 
+        <%= link_to 'Edit', edit_admin_topic_question_direction_path(@topic, @question, direction) %>
+      </a>
+    </h4>
+  </div>
+  <div id="directions-<%= direction.id %>" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <%= direction.content %>
+    </div>
+  </div>
+</div>

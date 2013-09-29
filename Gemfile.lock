@@ -89,6 +89,7 @@ GEM
       actionmailer (>= 3.2.6, < 5)
       devise (~> 3.0.0)
     diff-lcs (1.2.4)
+    dotenv (0.9.0)
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.0.0)
@@ -98,6 +99,9 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     ffi (1.9.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     formatador (0.2.4)
     guard (1.8.2)
       formatador (>= 0.2.4)
@@ -125,6 +129,8 @@ GEM
     jquery-rails (2.2.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (4.0.5)
+      railties (>= 3.1.0)
     listen (1.3.0)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -254,10 +260,12 @@ DEPENDENCIES
   devise
   devise_invitable
   factory_girl_rails
+  foreman
   guard-rspec
   hipchat
   jasmine-rails
   jquery-rails
+  jquery-ui-rails
   marionette-rails
   mongoid!
   mongoid-rspec

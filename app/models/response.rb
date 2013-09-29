@@ -1,9 +1,10 @@
-class Direction
+class Response
   include Mongoid::Document
-  field :order, type: Integer
-  field :approach, type: String
+  
+  field :title, type: String
   field :content, type: String
   field :context, type: Integer
+  
   
   embedded_in :question
 end

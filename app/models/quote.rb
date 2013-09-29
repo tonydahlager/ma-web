@@ -3,5 +3,5 @@ class Quote
   field :content, type: String
   field :author, type: String
   
-  belongs_to :topic
+  embedded_in :question
 end

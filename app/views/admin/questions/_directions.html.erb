@@ -1,0 +1,9 @@
+<div class="panel-group" id="accordion-directions">
+  <% directions.each do |direction| %>
+    <%= render partial: 'direction_item', locals: { direction: direction} %>
+  <% end %>
+</div>
+
+<br />
+
+<%= link_to 'Create Direction', new_admin_topic_question_direction_path(@topic, @question), { class: 'ma-link' } %>
