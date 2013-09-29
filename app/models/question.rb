@@ -13,7 +13,7 @@ class Question
     array = contexts
     next_context = contexts.last + 1
     array = array.push(next_context)
-    update_attribute(contexts: array)
+    update_attributes(contexts: array)
   end
   
   def delete_context(context_number)
