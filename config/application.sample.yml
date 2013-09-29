@@ -1,0 +1,17 @@
+# Add application configuration variables here, as shown below.
+
+common: &common
+  MANDRILL_PASSWORD: 'email@example.com'
+  MANDRILL_USERNAME: 'abc123'
+  
+development:
+  <<: *common
+  
+test: 
+  <<: *common
+
+staging:
+  <<: *common
+
+production:
+  <<: *common
