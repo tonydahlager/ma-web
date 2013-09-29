@@ -10,10 +10,10 @@ class Question
   embeds_many :transitions
   
   def add_context
-    max = contexts.max
-    next_context = max.nil? ? 1 : max + 1
-    push(contexts: next_context)
-    save
+    array = contexts
+    next_context = contexts.last + 1
+    array = array.push(next_context)
+    update_attribute(contexts: array)
   end
   
   def delete_context(context_number)
