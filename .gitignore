@@ -1,6 +1,4 @@
 /.bundle
-/db/*.sqlite3
-/db/*.sqlite3-journal
 /log/*.log
 /tmp
 .ruby-version
@@ -9,4 +7,6 @@
 public/assets/*
 
 # Ignore application configuration
-/config/application.yml
+application.yml
+
+mongoid.yml
