@@ -36,11 +36,11 @@
       
       <!-- add/delete buttons -->
       <div class="actions">
-        <%= link_to 'Add Response', new_admin_topic_question_response_path(@topic, @question, {context: context}), { class: 'ma-link'} %>
+        <%= link_to 'Add Response', new_admin_topic_question_response_path(@topic, @question, {context: "#{context}"}), { class: 'ma-link'} %>
         <div class="vspace-10"></div>
-        <%= link_to 'Add Direction',  new_admin_topic_question_direction_path(@topic, @question, {context: context}), { class: 'ma-link'} %>
+        <%= link_to 'Add Direction',  new_admin_topic_question_direction_path(@topic, @question, {context: "#{context}"}), { class: 'ma-link'} %>
         <div class="vspace-10"></div>
-        <%= link_to 'Delete Context', delete_context_admin_topic_question_path(@topic, @question, question: { context: context}), { class: 'ma-link', method: :delete} %>
+        <%= link_to 'Delete Context', delete_context_admin_topic_question_path(@topic, @question, question: { context: "#{context}"}), { class: 'ma-link', method: :delete} %>
         <div class="vspace-20"></div>
       </div>
       
