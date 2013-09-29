@@ -19,7 +19,7 @@
 
 <div class="row">
   <% @question.contexts.each do |context| %>
-    <div class="col-md-3 lane <%= "lane-generic" if context == 0 %>" data-context="<%= context %>">      
+    <div class="col-md-3 lane <%= "lane-generic" if context == 0 %>" data-context="<%= "#{context}" %>">      
       <div class="vspace-20"></div>     
       
       <!-- responses -->
