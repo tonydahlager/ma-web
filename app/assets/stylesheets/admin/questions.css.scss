@@ -1,3 +1,26 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.vspace-10  { padding-top: 10px; }
+.vspace-20  { padding-top: 20px; }
+.vspace-30  { padding-top: 30px; }
+.vspace-40  { padding-top: 40px; }
+.vspace-50  { padding-top: 50px; }
+.vspace-60  { padding-top: 60px; }
+.vspace-70  { padding-top: 70px; }
+.vspace-80  { padding-top: 80px; }
+.vspace-90  { padding-top: 90px; }
+.vspace-100 { padding-top: 100px;}
+
+.lane {
+  background-color: red;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.box {
+  width: 269px;
+}
+
+.draggable { }
