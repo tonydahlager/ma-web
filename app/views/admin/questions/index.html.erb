@@ -14,7 +14,7 @@
   <tbody>
     <% @questions.each do |question| %>
       <tr>
-        <td><%= question.topic_id %></td>
+        <td><%= question.topic.title %></td>
         <td><%= question.content %></td>
         <td><%= link_to 'Show', admin_topic_question_path(@topic, question) %></td>
         <td><%= link_to 'Edit', edit_admin_topic_question_path(@topic, question) %></td>
