@@ -1,10 +1,14 @@
 <div class="box draggable">
-  <div class="panel panel-default" data-context="<%= response.context %>">
+  <div class="panel panel-default attributes" data-context="<%= response.context %>" data-object="response" data-id="<%= response.id.to_s %>">
     <div class="panel-heading">
       <b>Title:&nbsp;</b><%= response.title %>
     </div>
     <div class="panel-body">
       <p><b>Content:&nbsp;</b><%= response.content %></p>
+      <div class="actions">
+        <%= link_to 'Edit', edit_admin_topic_question_response_path(@topic, @question, response), { class: 'ma-link' }%>
+        <%= link_to 'Delete', admin_topic_question_response_path(@topic, @question, response), { class: 'ma-link', method: :delete }%>
+      </div>
     </div>
   </div>
 </div>

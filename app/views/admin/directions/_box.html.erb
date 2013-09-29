@@ -1,10 +1,14 @@
 <div class="box draggable">
-  <div class="panel panel-default" data-context="<%= direction.context %>">
+  <div class="panel panel-default" data-context="<%= direction.context %>" data-object="direction" data-id="<%= direction.id.to_s %>">
     <div class="panel-heading">
       <b>Approach:&nbsp;</b><%= direction.approach %>
     </div>
     <div class="panel-body">
       <p><b>Content:&nbsp;</b><%= direction.content %></p>
+      <div class="actions">
+        <%= link_to 'Edit', edit_admin_topic_question_direction_path(@topic, @question, direction), { class: 'ma-link' }%>
+        <%= link_to 'Delete', admin_topic_question_direction_path(@topic, @question, direction), { class: 'ma-link', method: :delete }%>
+      </div>
     </div>
   </div>
 </div>

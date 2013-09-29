@@ -36,7 +36,10 @@ module Admin
     # PATCH/PUT /admin/topics/abc123/questions/xyz789/responses/ghi000
     def update
       if @response.update(response_params)
-        redirect_to [:admin, @topic, @question], notice: 'Response was successfully updated.'
+        respond_to do |format|
+          format.html { redirect_to [:admin, @topic, @question], notice: 'Response was successfully updated.' }
+          format.json { render json: 'successful' }
+        end
       else
         render action: 'edit'
       end
