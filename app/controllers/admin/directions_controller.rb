@@ -15,7 +15,7 @@ module Admin
 
     # GET /admin/topics/abc123/questions/xyz789/directions/new
     def new
-      @direction = Direction.new
+      @direction = Direction.new(context: direction_context)
     end
 
     # GET /admin/topics/abc123/questions/xyz789/directions/ghi000/edit
@@ -62,7 +62,11 @@ module Admin
       end
 
       def direction_params
-        params.require(:direction).permit(:order, :approach, :content)
+        params.require(:direction).permit(:order, :approach, :content, :context)
+      end
+      
+      def direction_context
+        params.permit(:context)['context']
       end
   end
 end

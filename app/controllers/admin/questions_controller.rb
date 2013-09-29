@@ -1,7 +1,7 @@
 module Admin
   class QuestionsController < BaseController    
-    before_action :set_topic # all actions
-    before_action :set_question, only: [:show, :edit, :update, :destroy]
+    before_action :set_topic
+    before_action :set_question, except: [:index, :new, :create]
 
     # GET /admin/topics/123abc/questions
     def index
@@ -12,16 +12,16 @@ module Admin
     def show
     end
 
-    # GET /admin/questions/new
+    # GET /admin/topics/123abc/questions/new
     def new
       @question = Question.new
     end
 
-    # GET /admin/questions/1/edit
+    # GET /admin/topics/123abc/questions/321xyz/edit
     def edit
     end
 
-    # POST /questions
+    # POST /admin/topics/123abc/questions
     def create    
       @question = @topic.questions.build(question_params)
       
@@ -32,19 +32,37 @@ module Admin
       end
     end
 
-    # PATCH/PUT /admin/questions/1
+    # PATCH/PUT /admin/topics/123abc/questions/321xyz
     def update
       if @question.update(question_params)
-        redirect_to admin_topic_path(@topic), notice: 'Question was successfully updated.'
+        redirect_to [:admin, @topic, @question], notice: 'Question was successfully updated.'
       else
         render action: 'edit'
       end
     end
 
-    # DELETE /admin/questions/1
+    # DELETE /admin/topics/123abc/questions/321xyz
     def destroy
       @question.destroy
-      redirect_to admin_topic_url(@topic), notice: 'Question was successfully destroyed.'
+      redirect_to [:admin, @topic], notice: 'Question was successfully destroyed.'
+    end
+    
+    # POST /admin/topics/123abc/questions/321xyz/add_context
+    def add_context
+      if @question.add_context
+        redirect_to [:admin, @topic, @question]
+      else
+        redirect_to [:admin, @topic, @question], notice: 'Error adding context'
+      end
+    end
+    
+    # DELETE /admin/topics/123abc/questions/321xyz/delete_context
+    def delete_context
+      if @question.delete_context(question_context)
+        redirect_to [:admin, @topic, @question]
+      else
+        redirect_to [:admin, @topic, @question], notice: 'Error deleting context'
+      end
     end
 
     private
@@ -61,6 +79,10 @@ module Admin
       # Only allow a trusted parameter "white list" through.
       def question_params
         params.require(:question).permit(:topic_id, :content)
+      end
+      
+      def question_context
+        params.require(:question).permit(:context)['context'].to_i
       end
   end
 end

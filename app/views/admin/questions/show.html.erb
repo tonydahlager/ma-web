@@ -9,19 +9,39 @@
 </p>
 
 <%= link_to 'Edit Question', edit_admin_topic_question_path(@topic, @question), { class: 'ma-link' }%>
-<%= link_to 'Back', admin_topic_questions_path(@topic), { class: 'ma-link' } %>
+<%= link_to 'Back', [:admin, @topic], { class: 'ma-link' } %>
 
-<br />
-<br />
+<div class="vspace-20"></div>
 
-<%= render partial: 'responses', locals: { responses: @question.responses } %>
+<%= link_to 'Add Context', add_context_admin_topic_question_path(@topic, @question), { class: 'ma-link', method: :post} %>
 
-<%= render partial: 'directions', locals: { directions: @question.directions } %>
+<div class="vspace-20"></div>
 
-<div>
-  <p>transition</p>
-</div>
-
-<div>
-  <p>topic end location</p>
+<div class="row">
+  <% @question.contexts.each do |context| %>
+    <div class="col-md-3 lane">
+      
+      <div class="vspace-10"></div>
+      
+      <% @question.responses.where(context: context).each do |response| %>
+        <%= render partial: '/admin/responses/box', locals: { response: response }  %>
+      <% end %>
+      
+      <% @question.directions.where(context: context).each do |direction| %>
+        <%= render partial: '/admin/directions/box', locals: { direction: direction } %>
+      <% end %>
+      
+      <div class="vspace-20"></div>
+      
+      <div class="actions">
+        <%= link_to 'Add Response',   new_admin_topic_question_response_path(@topic, @question, {context: context}), { class: 'ma-link' } %>
+        <div class="vspace-10"></div>
+        
+        <%= link_to 'Add Direction',  new_admin_topic_question_direction_path(@topic, @question, {context: context}), { class: 'ma-link' } %>
+        <div class="vspace-10"></div>
+        
+        <%= link_to 'Delete Context', delete_context_admin_topic_question_path(@topic, @question, question: { context: context}), { class: 'ma-link', method: :delete} %>
+      </div>
+    </div>
+  <% end %>
 </div>

@@ -5,6 +5,10 @@ Varkek::Application.routes.draw do
     
     resources :topics do 
       resources :questions do 
+        member do 
+          post :add_context
+          delete :delete_context
+        end
         resources :responses
         resources :directions
       end

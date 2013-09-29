@@ -15,7 +15,7 @@ module Admin
 
     # GET /admin/topics/abc123/questions/xyz789/responses/new
     def new
-      @response = Response.new
+      @response = Response.new(context: response_context)
     end
 
     # GET /admin/topics/abc123/questions/xyz789/responses/ghi000/edit
@@ -63,7 +63,11 @@ module Admin
       
       # Only allow a trusted parameter "white list" through.
       def response_params
-        params.require(:response).permit(:content, :title, :group)
+        params.require(:response).permit(:content, :title, :context)
+      end
+      
+      def response_context
+        params.permit(:context)['context']
       end
   end
 end
