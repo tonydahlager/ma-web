@@ -8,6 +8,7 @@ gem 'sass-rails',   '~> 4.0.0'
 gem 'uglifier',     '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :test, :development do
   gem 'rspec',       '~> 2.14.0'
@@ -32,7 +33,6 @@ gem 'railsy_backbone'
 gem 'marionette-rails'
 gem 'rabl'
 gem 'prawn', '~> 1.0.0.rc2'
-
 
 gem 'capistrano'
 gem 'rvm-capistrano'
