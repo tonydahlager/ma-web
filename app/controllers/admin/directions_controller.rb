@@ -36,7 +36,7 @@ module Admin
     # PATCH/PUT /admin/topics/abc123/questions/xyz789/directions/ghi000
     def update
       if @direction.update(direction_params)
-        redirect_to [:admin, @topic, @question], notice: 'Direction was successfully updated.'
+        redirect_to [:admin, @topic, @question], status: 303, notice: 'Direction was successfully updated.'
       else
         render action: 'edit'
       end

@@ -37,7 +37,7 @@ module Admin
     def update
       if @response.update(response_params)
         respond_to do |format|
-          format.html { redirect_to [:admin, @topic, @question], notice: 'Response was successfully updated.' }
+          format.html { redirect_to [:admin, @topic, @question], status: 303, notice: 'Response was successfully updated.' }
           format.json { render json: 'successful' }
         end
       else
