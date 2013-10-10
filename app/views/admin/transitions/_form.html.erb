@@ -1,0 +1,31 @@
+<%= form_for [:admin, @topic, @question, @transition] do |f| %>
+  <% if @transition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transition.errors.count, "error") %> prohibited this transition from being saved:</h2>
+
+      <ul>
+      <% @transition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="hidden">
+    <%= f.text_field :context %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content, class: 'ma-text-edit' %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit class: 'ma-link' %>
+  </div>
+<% end %>

@@ -13,25 +13,32 @@ $ ->
   
   $(document).on 'drop', '.lane', (event, ui) ->
     new_context = $(@).data('context')
-    box     = $(ui.draggable).children('.attributes')
-    object  = box.data('object')
-    id      = box.data('id')
+    box = $(ui.draggable[0]).children('.attributes')
+    console.log box
+    object  = $(box).data('object')    
+    id      = $(box).data('id')
     update_context(object, id, new_context)
   
   update_context = (object, id, context_int) ->
     topic_id    = window.location.pathname.split('/')[3]
     question_id = window.location.pathname.split('/')[5]
     
-    url = "/admin/topics/" + topic_id + 
-      "/questions/" + question_id + 
-      "/" + object +  "s/" + id
+    console.log object 
+    console.log id
+    
+    url = "/admin/topics/" + topic_id + "/questions/" + question_id + "/" + object +  "s/" + id
+    
     crsf_token = $('meta[name="csrf-token"]').attr('content')
+    
+    data_hash = {}
+    data_hash["authenticity_token"] = crsf_token
+    data_hash[object] = { context: context_int }    
     
     $.ajax(
       type: 'PUT'
       url: url
       dataType: 'JSON'
-      data: { authenticity_token: crsf_token, response: { context: context_int }}
+      data: data_hash
     )
   
   

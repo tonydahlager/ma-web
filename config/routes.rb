@@ -11,6 +11,7 @@ Varkek::Application.routes.draw do
         end
         resources :responses
         resources :directions
+        resources :transitions
       end
     end
     resources :users
