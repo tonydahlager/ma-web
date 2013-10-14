@@ -26,35 +26,38 @@ module Admin
           end
           
           pdf.move_down 20
-          pdf.text "Bridges"
-          pdf.move_down 2
-          @topic.bridges.to_enum.with_index(1).each do |bridge, index|
-            pdf.text "#{index} - #{bridge.content}"
-            pdf.move_down 2
-          end
-          
-          pdf.move_down 20
           pdf.text "Questions"
-          pdf.move_down 2
-          @topic.questions.to_enum.with_index(1).each do |question, index|
-            pdf.text "#{index} - #{question.content}"
-            pdf.move_down 2
-          end
           
-          pdf.move_down 20
-          pdf.text "Directions"
-          pdf.move_down 2
-          @topic.directions.asc(:order).each_with_index do |direction, index|
-            pdf.text "#{direction.order} - #{direction.approach} - #{direction.content}"
-            pdf.move_down 2
-          end
-          
-          pdf.move_down 20
-          pdf.text "Links"
-          pdf.move_down 2
-          @topic.links.to_enum.with_index(1).each do |link, index|
-            pdf.text "#{index} - #{link.content}"
-            pdf.move_down 2
+          @topic.questions.each do |question|
+            question.contexts.each do |context|
+              pdf.text context == 0 ? "Default Context" : "Context #{context}"
+              pdf.move_down 2
+              
+              # responses
+              question.responses.select{ |r| context == r.context }.each do |response|
+                pdf.text "-------- Response"
+                pdf.text "Title: #{response.title}"
+                pdf.text "Content: #{response.content}"
+                pdf.move_down 10
+              end
+              
+              # directions
+              question.directions.select{ |d| context == d.context }.each do |direction|
+                pdf.text "-------- Direction"
+                pdf.text "Approach: #{direction.approach}"
+                pdf.text "Cotent: #{direction.content}"
+                pdf.move_down 10
+              end
+              
+              # transitions
+              question.transitions.select{ |t| context == t.context }.each do |transition|
+                pdf.text "-------- Transition"
+                pdf.text "Title: #{transition.title}"
+                pdf.text "Content: #{transition.content}"
+              end
+              
+              pdf.move_down 20
+            end
           end
           
           send_data pdf.render, type: "application/pdf", disposition: "inline"
