@@ -6,6 +6,9 @@ rvm:
 services:
   - mongodb
 
+before_script: 
+  - cp config/mongoid.example.yml config/mongoid.yml
+
 script: rake spec
 
 notifications:
