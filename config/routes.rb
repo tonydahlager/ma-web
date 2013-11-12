@@ -18,6 +18,13 @@ Varkek::Application.routes.draw do
     root to: 'topics#index'
   end
 
+  namespace :api do 
+    namespace :v1 do
+      resources :topics, only: [:index, :show]
+    end
+  end
+  
+
   # nuke this
   resources :cards, only: [:index, :show]
 
