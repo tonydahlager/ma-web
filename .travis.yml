@@ -6,7 +6,7 @@ rvm:
 services:
   - mongodb
 
-script: bundle exec rake spec spec:javascript
+script: rake spec
 
 notifications:
   hipchat:
