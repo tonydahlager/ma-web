@@ -9,9 +9,14 @@ module Api
       
       def show
         @topic = Topic.find(params[:id])
-        render "show", formats: :json, object: @topic
+        template = render_all ? "topic_graph" : "show"
+        render template, formats: :json, object: @topic
       end
       
+      private 
+        def render_all
+          params[:render_all]
+        end
     end
   end
 end

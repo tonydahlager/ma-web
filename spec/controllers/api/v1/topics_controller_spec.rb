@@ -25,15 +25,29 @@ describe Api::V1::TopicsController do
       assigns(:topic).should eq(topic)
     end
     
-    it "should render the template" do 
-      topic = FactoryGirl.create(:topic)
-      
-      get :show, 
-        use_route: "api/v1/", 
-        id: topic.id
+    context "should render" do
+      it ":show template" do 
+        topic = FactoryGirl.create(:topic)
         
-      response.should be_success 
-      response.should render_template :show
+        get :show, 
+          use_route: "api/v1/", 
+          id: topic.id
+          
+        response.should be_success 
+        response.should render_template :show
+      end
+      
+      it ":topic_graph template" do 
+        topic = FactoryGirl.create(:topic)
+        
+        get :show, 
+          use_route: "api/v1", 
+          id: topic.id, 
+          render_all: true
+          
+        response.should be_success
+        response.should render_template :topic_graph
+      end
     end
   end
 end
