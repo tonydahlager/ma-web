@@ -16,4 +16,7 @@
 //= require jquery.ui.droppable
 //= require jquery.ui.effect-highlight.js 
 //= require bootstrap
+//= require angular
+//= require angular-animate
+//= require angular-resource
 //= require_tree .
