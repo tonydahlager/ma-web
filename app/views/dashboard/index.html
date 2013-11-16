@@ -1,0 +1,16 @@
+<div ng-app="maappApp">
+  
+  <div ng-controller="TopicsCtrl">
+    <h3 class="">Topics</h3>
+    
+    <div class="list-group">
+      <div class="list-group-item" ng-repeat="topic in topics | orderBy:'title'">
+        <b>{{topic.title}}</b>
+        <br>
+        {{topic.description}}
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
