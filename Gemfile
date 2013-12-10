@@ -4,36 +4,42 @@ ruby '2.0.0'
 
 gem 'rails',   '4.0.2'
 
-gem 'sass-rails',   '~> 4.0.0'
-gem 'uglifier',     '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-group :test, :development do
-  gem 'rspec',       '~> 2.14.0'
-  gem 'rspec-rails', '~> 2.14.0', :github => 'rspec/rspec-rails', :branch => '2-14-maintenance'
-  gem 'mongoid-rspec'
-  gem 'pry'
-  gem 'database_cleaner'
-  gem 'factory_girl_rails'
-  gem 'database_cleaner'
-  gem 'guard-rspec'
-  gem 'jasmine-rails'
-  gem 'quiet_assets'
-  gem 'foreman'
-end
 
-gem 'bootstrap-sass', :github => 'thomas-mcdonald/bootstrap-sass'
-gem 'mongoid', :github => 'mongoid/mongoid'
+### app
+
+gem 'bootstrap-sass'
+gem 'mongoid'
 gem 'devise_invitable'
 gem 'bson_ext'
-gem 'devise'
+gem 'devise', '>= 3, <= 4'
 gem 'rabl'
 gem 'prawn', '~> 1.0.0.rc2'
 gem 'figaro'
 gem 'angularjs-rails'
 
+
+### deploy
+
 gem 'capistrano'
 gem 'rvm-capistrano'
-gem 'hipchat'
+
+
+### testing/dev
+
+gem 'rspec'
+gem 'rspec-rails'
+gem 'mongoid-rspec'
+gem 'pry'
+gem 'database_cleaner'
+gem 'factory_girl_rails'
+gem 'database_cleaner'
+gem 'guard-rspec'
+gem 'jasmine-rails'
+gem 'quiet_assets'
+gem 'foreman'
