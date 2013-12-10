@@ -254,6 +254,7 @@ DEPENDENCIES
   quiet_assets
   rabl
   rails (= 4.0.2)
+  rake
   rspec
   rspec-rails
   rvm-capistrano

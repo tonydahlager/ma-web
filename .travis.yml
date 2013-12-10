@@ -9,12 +9,7 @@ services:
 before_script: 
   - cp config/mongoid.example.yml config/mongoid.yml
 
-script: rake spec
-
-notifications:
-  hipchat:
-    rooms:
-      48043dcd347f6ba6de724cab65b1a0@notifications
-    template:
-      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Details</a>/<a href="%{compare_url}">Change view</a>)'
-    format: html
+# use default Travis test suite kick off
+# http://about.travis-ci.org/docs/user/languages/ruby/#Default-Test-Script
+# 
+# script: bundle exec rake

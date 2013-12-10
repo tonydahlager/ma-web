@@ -28,10 +28,11 @@ gem 'angularjs-rails'
 
 gem 'capistrano'
 gem 'rvm-capistrano'
-
+gem 'foreman'
 
 ### testing/dev
 
+gem 'rake'
 gem 'rspec'
 gem 'rspec-rails'
 gem 'mongoid-rspec'
@@ -42,4 +43,4 @@ gem 'database_cleaner'
 gem 'guard-rspec'
 gem 'jasmine-rails'
 gem 'quiet_assets'
-gem 'foreman'
+
