@@ -1,0 +1,18 @@
+# Add application configuration variables here, as shown below.
+
+common: &common
+  MANDRILL_PASSWORD: 'email@example.com'
+  MANDRILL_USERNAME: 'abc123'
+  DEVISE_SECRET_KEY: 'devise_secret_key'
+
+development:
+  <<: *common
+
+test: 
+  <<: *common
+
+staging:
+  <<: *common
+
+production:
+  <<: *common
