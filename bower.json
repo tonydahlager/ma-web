@@ -1,0 +1,34 @@
+{
+  "name": "ma-web",
+  "version": "0.0.1",
+  "homepage": "https://github.com/westonplatter/varkek-web",
+  "authors": [
+    "Weston Platter <westonplatter@gmail.com>"
+  ],
+  "description": "mobile apologetics",
+  "license": "BSD-3-Clause",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "install": {
+    "path": {
+      "css": "vendor/assets/stylesheets",
+      "js": "vendor/assets/javascripts"
+    }
+  },
+  "dependencies": {
+    "jquery": "*",
+    "jquery-ui": "*",
+    "jquery-ujs": "*",
+    "angular": "~1.2.5",
+    "angular-animate": "*",
+    "angular-resource": "*",
+    "bootstrap": "~3.0.3"
+  }
+}

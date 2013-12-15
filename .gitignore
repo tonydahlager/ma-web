@@ -8,5 +8,8 @@ public/assets/*
 
 # Ignore application configuration
 application.yml
-
 mongoid.yml
+
+# Ignore bower and npm dev tools
+bower_components
+node_modules

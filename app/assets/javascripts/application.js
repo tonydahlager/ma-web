@@ -11,10 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require jquery.ui.draggable
-//= require jquery.ui.droppable
-//= require jquery.ui.effect-highlight.js 
+//= require rails
+//= require jquery-ui
 //= require bootstrap
 //= require angular
 //= require angular-animate
