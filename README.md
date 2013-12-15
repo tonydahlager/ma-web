@@ -9,4 +9,4 @@ stable &nbsp;&nbsp;&nbsp; [![Build Status](https://travis-ci.org/westonplatter/v
 
 inspiring deep conversations.
 
-Copyright (c) 2013. Weston Platter. MIT License.
+Copyright (c) 2013. Weston Platter. BSD-3-Clause License.
