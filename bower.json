@@ -26,9 +26,6 @@
     "jquery": "*",
     "jquery-ui": "*",
     "jquery-ujs": "*",
-    "angular": "~1.2.5",
-    "angular-animate": "*",
-    "angular-resource": "*",
     "bootstrap": "~3.0.3"
   }
 }

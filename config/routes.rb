@@ -23,14 +23,7 @@ Varkek::Application.routes.draw do
       resources :topics, only: [:index, :show]
     end
   end
-  
-
-  # nuke this
-  resources :cards, only: [:index, :show]
-
-  get "dashboard/index" # => 'dashboard#index'
-  get "dashboard"         => 'dashboard#index'
-
+    
   devise_for :users, :skip => [:registrations, :invitation]
   as :user do
     get 'users/edit' => 'devise/registrations#edit',   as: 'edit_user_registration'
@@ -40,9 +33,5 @@ Varkek::Application.routes.draw do
     put '/users/invitation'        => 'devise/invitations#update', as: nil
   end
 
-  root to: 'dashboard#index'
-
-  if ['development', 'test'].include?(Rails.env)
-    mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
-  end
+  root to: 'api/v1/topics#index'
 end

@@ -1,8 +1,15 @@
 class Topic
   include Mongoid::Document
-  field :title, type: String
-  field :description, type: String
-  field :topic_group_ids, type: Array, default: []
+  
+  field :title, 
+    type: String
+  
+  field :description, 
+    type: String
+  
+  field :topic_group_ids, 
+    type: Array, 
+    default: []
 
   embeds_many :questions
   
