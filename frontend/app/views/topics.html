@@ -1,0 +1,9 @@
+<div ng-include='"partials/header.html"'></div>
+
+<div ng-controller='TopicsCtrl' class='table'>
+  <div class='row' ng-repeat='topic in topics'>
+    {{ topic }}
+  </div>
+</div>
+
+<div ng-include='"partials/footer.html"'></div>

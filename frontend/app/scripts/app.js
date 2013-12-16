@@ -12,6 +12,9 @@ angular.module('femaApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/topics',  {
+        templateUrl: 'views/topics.html'
+      })
       .otherwise({
         redirectTo: '/'
       });
