@@ -1,0 +1,26 @@
+<%= link_to 'Back to Context ', [:admin, @topic, @barrier, @context], { class: 'ma-link' } %>
+<br>
+<br>
+<br>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @barrier.topic.title %>
+</p>
+
+<p>
+  <strong>Barrier:</strong>
+  <%= @barrier.title %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @context.title %>
+</p>
+
+<p>
+  <strong>Step:</strong>
+  <%= @step.title %>
+</p>
+
+<%= link_to 'Edit Step', edit_admin_topic_barrier_context_step_path(@topic, @barrier, @context, @step), { class: 'ma-link' }%>

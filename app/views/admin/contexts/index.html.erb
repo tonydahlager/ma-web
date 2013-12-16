@@ -1,0 +1,29 @@
+<h1>Listing contexts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Barrier</th>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contexts.each do |context| %>
+      <tr>
+        <td><%= context.barrier.title %></td>
+        <td><%= context.title %></td>
+        <td><%= link_to 'Show', admin_topic_barrier_context_path(@topic, @barrier, context) %></td>
+        <td><%= link_to 'Edit', edit_admin_topic_barrier_context_path(@topic, @barrier, context) %></td>
+        <td><%= link_to 'Destroy', admin_topic_barrier_contexts_path(@topic, @barrier), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New context', new_admin_topic_barrier_context_path(@topic, @barrier) %>

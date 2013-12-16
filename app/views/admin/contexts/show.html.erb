@@ -1,0 +1,48 @@
+<%= link_to 'Back to Barrier ', [:admin, @topic, @barrier], { class: 'ma-link' } %>
+<br>
+<br>
+<br>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @barrier.topic.title %>
+</p>
+
+<p>
+  <strong>Barrier:</strong>
+  <%= @barrier.title %>
+</p>
+
+<p>
+  <strong>Context:</strong>
+  <%= @context.title %>
+</p>
+
+<%= link_to 'Edit Context', edit_admin_topic_barrier_context_path(@topic, @barrier, @context), { class: 'ma-link' }%>
+<br>
+<br>
+<br>
+
+<h3>Steps</h3> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <td class="col-md-2">Actions</td>
+      <td>Step</td>
+    </tr>
+  </thead>
+  
+  <% @context.steps.each do |step| %>
+    <tr>
+      <td>
+        <%= link_to 'Go To', admin_topic_barrier_context_step_path(@topic, @barrier, @context, step), class: 'ma-link' %>
+        <%= link_to 'Edit', edit_admin_topic_barrier_context_step_path(@topic, @barrier, @context, step), class: 'ma-link' %>
+        <%= link_to 'Delete', admin_topic_barrier_context_step_path(@topic, @barrier, @context, step), {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
+      </td>
+      <td><%= step.title %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Step', new_admin_topic_barrier_context_step_path(@topic, @barrier, @context), { class: 'ma-link' }%>

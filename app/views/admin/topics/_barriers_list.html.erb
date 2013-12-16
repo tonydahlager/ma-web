@@ -1,0 +1,16 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>Barriers</div>
+  <!-- <div class='panel-body'></div> -->
+  <ul class='list-group'>
+    <% barriers.each do |barrier| %>
+      <li class='list-group-item'>
+        <%= link_to 'Go To', admin_topic_barrier_path(topic, barrier), {class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, topic, barrier], {class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
+        <%= barrier.title %>
+      </li>
+    <% end %>
+    <li class='list-group-item'>
+      <%= button_to 'New Barrier', new_admin_topic_barrier_path(topic), {method: :get, class: 'btn btn-success btn-sm'} %>
+    </li>
+  </ul>
+</div>

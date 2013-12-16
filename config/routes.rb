@@ -4,14 +4,10 @@ Varkek::Application.routes.draw do
     resources :topic_groups
     
     resources :topics do 
-      resources :questions do 
-        member do 
-          post :add_context
-          delete :delete_context
+      resources :barriers do 
+        resources :contexts do 
+          resources :steps, except: [:index]
         end
-        resources :responses
-        resources :directions
-        resources :transitions
       end
     end
     resources :users

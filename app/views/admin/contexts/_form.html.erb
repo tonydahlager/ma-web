@@ -1,0 +1,21 @@
+<%= form_for([:admin, @topic, @barrier, @context]) do |f| %>
+  <% if @context.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@context.errors.count, "error") %> prohibited this context from being saved:</h2>
+
+      <ul>
+      <% @context.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit class: 'ma-link' %>
+  </div>
+<% end %>

@@ -12,11 +12,10 @@
 
 <br />
 
-<%= link_to 'PDF', admin_topic_path(@topic, format: 'pdf'), { class: 'ma-link'} %>
 <%= link_to 'Edit', edit_admin_topic_path(@topic), { class: 'ma-link'} %>
 <%= link_to 'Back to all Topics', admin_topics_path, {class: 'ma-link'} %>
 <br>
 <br>
 <br>
 
-<%= render partial: 'questions_list', locals: {topic: @topic, questions: @topic.questions} %>
+<%= render partial: 'barriers_list', locals: {topic: @topic, barriers: @topic.barriers} %>

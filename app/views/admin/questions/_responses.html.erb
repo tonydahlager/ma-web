@@ -1,9 +1,0 @@
-<div class="panel-group" id="accordion-responses">
-  <% responses.each do |response| %>
-    <%= render partial: 'response_item', locals: { response: response} %>
-  <% end %>
-</div>
-
-<br />
-
-<%= link_to 'Create Response', new_admin_topic_question_response_path(@topic, @question), { class: 'ma-link' } %>

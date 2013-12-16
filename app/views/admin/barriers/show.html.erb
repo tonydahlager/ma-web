@@ -1,0 +1,40 @@
+<%= link_to 'Back to Topics ', [:admin, @topic], { class: 'ma-link' } %>
+<br>
+<br>
+<br>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @barrier.topic.title %>
+</p>
+
+<p>
+  <strong>Barrier:</strong>
+  <%= @barrier.title %>
+</p>
+
+<%= link_to 'Edit Barrier', edit_admin_topic_barrier_path(@topic, @barrier), { class: 'ma-link' }%>
+<br>
+<br>
+<br>
+
+<h3>Contexts</h3> 
+
+<table class="table">
+  <thead>
+    <td class="col-md-2">Actions</td>
+    <td>Context</td>
+  </thead>
+  <% @barrier.contexts.each do |context| %>
+  <tr>
+    <td>
+      <%= link_to 'Go To', admin_topic_barrier_context_path(@topic, @barrier, context), class: "ma-link" %>
+      <%= link_to 'Edit', edit_admin_topic_barrier_context_path(@topic, @barrier, context), class: "ma-link" %>
+      <%= link_to 'Delete', admin_topic_barrier_context_path(@topic, @barrier, context), {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
+    </td>
+    <td><%= context.title %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Context', new_admin_topic_barrier_context_path(@topic, @barrier), { class: 'ma-link' }%>
