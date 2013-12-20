@@ -18,4 +18,8 @@ class Topic
     topic_groups = TopicGroup.where(:_id.in => topic_group_ids)
   end
   
+  def id_to_s
+    id.to_s
+  end
+  
 end

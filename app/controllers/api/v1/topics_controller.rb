@@ -4,13 +4,17 @@ module Api
       
       def index 
         @topics = Topic.all
-        render "index", formats: :json, collection: @topics
+        render "index", 
+          formats: :json, 
+          collection: @topics
       end
       
       def show
         @topic = Topic.find(params[:id])
         template = render_all ? "topic_graph" : "show"
-        render template, formats: :json, object: @topic
+        render template, 
+          formats: :json, 
+          object: @topic
       end
       
       private 

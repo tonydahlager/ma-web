@@ -1,2 +1,2 @@
 object @topic
-attributes :title, :description
+attributes :id_to_s, :title, :description
