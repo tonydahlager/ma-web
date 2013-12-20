@@ -1,5 +1,6 @@
 class Transition
   include Mongoid::Document
+  include Varkek::Document
   
   embedded_in :step
   

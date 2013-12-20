@@ -1,7 +1,13 @@
 class Question
   include Mongoid::Document
-  field :content, type: String
-  field :contexts, type: Array, default: [0]
+  include Varkek::Document
+  
+  field :content, 
+    type: String
+    
+  field :contexts, 
+    type: Array, 
+    default: [0]
   
   embedded_in :topic
   

@@ -1,5 +1,6 @@
 class Topic
   include Mongoid::Document
+  include Varkek::Document
   
   embeds_many :questions
   embeds_many :barriers
@@ -16,10 +17,5 @@ class Topic
     
   def topic_groups 
     topic_groups = TopicGroup.where(:_id.in => topic_group_ids)
-  end
-  
-  def id_to_s
-    id.to_s
-  end
-  
+  end  
 end
