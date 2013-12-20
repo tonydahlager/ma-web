@@ -13,7 +13,12 @@ angular.module('femaApp', [
         controller: 'MainCtrl'
       })
       .when('/topics',  {
+        controller: 'TopicsListCtrl',
         templateUrl: 'views/topics.html'
+      })
+      .when('/topics/:topicId', {
+        controller: 'TopicDetailCtrl',
+        templateUrl: 'views/topic.html'
       })
       .otherwise({
         redirectTo: '/'

@@ -1,0 +1,20 @@
+<div ng-include='"partials/header.html"'></div>
+
+<div>
+  <a class='btn btn-default' href='#/topics'>Back</a>
+</div>
+
+<br>
+
+<div ng-controller='TopicDetailCtrl'>
+  <div class='title'>{{ topic.title }}</div>
+  
+  <br>
+  
+  <div>Barriers</div>
+  <ul class='row barriers' ng-repeat='barrier in topic.barriers'>
+    <li class='preview'>{{ barrier['barrier'].title }}</li>
+  </ul>
+</div>
+
+<div ng-include='"partials/footer.html"'></div>
