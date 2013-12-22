@@ -2,7 +2,6 @@ Varkek::Application.routes.draw do
   
   namespace :admin do
     resources :topic_groups
-    
     resources :topics do 
       resources :barriers do 
         resources :contexts do 
@@ -16,7 +15,10 @@ Varkek::Application.routes.draw do
 
   namespace :api do 
     namespace :v1 do
-      resources :topics, only: [:index, :show]
+      resources :topics,    only: [:index, :show]
+      resources :barriers,  only: [:index, :show]
+      resources :contexts,  only: [:index, :show]
+      resources :steps,     only: [:index, :show]
     end
   end
     
