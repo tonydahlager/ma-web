@@ -1,0 +1,17 @@
+<div ng-include="'views/partials/header.html'"></div>
+<div ng-include='"views/partials/breadcrumbs.html"'></div>
+
+<div class='context' ng-controller='ContextDetailCtrl'>
+  <div class='title'>{{ context.title }}</div>
+  
+  <div class='table'>
+    <div class='row' ng-repeat='step in context.steps'>
+      <div class='col-md-3'>
+        <a href='#/steps/{{ step["step"].id_to_s }}'>{{ step['step'].title }}</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-include="'views/partials/footer.html'"></div>
+

@@ -2,7 +2,7 @@ module Api
   module V1
     class StepsController < Base
       
-      before_filter :set_context
+      before_filter :set_context, only: [:index]
             
       def index 
         @steps = @context.steps
@@ -12,7 +12,7 @@ module Api
       end
       
       def show
-        @step = @context.steps.find(params[:id])
+        @step = Step.find(params[:id])
         render :show, 
           formats: :json, 
           object: @step

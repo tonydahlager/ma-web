@@ -2,7 +2,7 @@ module Api
   module V1
     class BarriersController < Base
       
-      before_filter :set_topic
+      before_filter :set_topic, only: [:index]
             
       def index 
         @barriers = @topic.barriers
@@ -12,7 +12,7 @@ module Api
       end
       
       def show
-        @barrier = @topic.barriers.find(params[:id])
+        @barrier = Barrier.find(params[:id])
         render :show, 
           formats: :json, 
           object: @barrier

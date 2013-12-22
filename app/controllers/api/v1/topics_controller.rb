@@ -4,7 +4,7 @@ module Api
       
       def index 
         @topics = Topic.all
-        render "index", 
+        render :index, 
           formats: :json,
           collection: @topics
       end
@@ -16,10 +16,6 @@ module Api
           object: @topic
       end
       
-      private 
-        def render_all
-          params[:render_all]
-        end
     end
   end
 end

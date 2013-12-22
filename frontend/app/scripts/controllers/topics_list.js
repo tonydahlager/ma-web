@@ -3,17 +3,12 @@
 angular.module('femaApp')
   .controller('TopicsListCtrl', 
     ['$scope', 
-      '$http', 
-      function($scope, $http) {
-    
-        var url = '/api/v1/';
-        var resourceUrl = url + 'topics';
-        
-        $http.get(resourceUrl).success(function(data){
-          console.log(data);
-          $scope.topics = data;
-        });
-    
+      '$resource',
+      '$routeParams',
+      function ($scope, $resource, $routeParams) {
+        var Topic = $resource('/api/v1/topics');
+        var topics = Topic.query();
+        $scope.topics = topics;
       }
     ]
   );

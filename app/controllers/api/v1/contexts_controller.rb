@@ -2,7 +2,7 @@ module Api
   module V1
     class ContextsController < Base
       
-      before_filter :set_barrier
+      before_filter :set_barrier, only: [:index]
             
       def index 
         @contexts = @barrier.contexts
@@ -12,7 +12,7 @@ module Api
       end
       
       def show
-        @context = @barrier.contexts.find(params[:id])
+        @context = Context.find(params[:id])
         render :show, 
           formats: :json, 
           object: @context

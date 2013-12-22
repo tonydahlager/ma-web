@@ -6,7 +6,8 @@ describe Api::V1::TopicsController do
       FactoryGirl.create(:topic)
       FactoryGirl.create(:topic)
       
-      get :index, use_route: "api/v1"
+      get :index, 
+        use_route: "api/v1"
       
       response.should be_success
       response.should render_template :index

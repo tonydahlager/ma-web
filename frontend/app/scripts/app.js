@@ -16,9 +16,28 @@ angular.module('femaApp', [
         controller: 'TopicsListCtrl',
         templateUrl: 'views/topics.html'
       })
-      .when('/topics/:topicId', {
+      .when('/topics/:id', {
         controller: 'TopicDetailCtrl',
         templateUrl: 'views/topic.html'
+      })
+      .when('/barriers/:id', {
+       controller: 'BarrierDetailCtrl',
+       templateUrl: 'views/barrier.html'
+      })
+      .when('/contexts/:id', {
+        controller: 'ContextDetailCtrl',
+        templateUrl: 'views/context.html'
+      })
+      .when('/steps/:id', {
+        controller: 'StepDetailCtrl', 
+        templateUrl: 'views/step.html'
+      })
+      
+      // non-default object model
+      
+      .when('/barriers', {
+        controller: 'BarriersListCtrl', 
+        templateUrl: 'views/barriers.html'
       })
       .otherwise({
         redirectTo: '/'

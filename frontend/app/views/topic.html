@@ -1,10 +1,5 @@
-<div ng-include='"partials/header.html"'></div>
-
-<div>
-  <a class='btn btn-default' href='#/topics'>Back</a>
-</div>
-
-<br>
+<div ng-include='"views/partials/header.html"'></div>
+<div ng-include='"views/partials/breadcrumbs.html"'></div>
 
 <div ng-controller='TopicDetailCtrl'>
   <div class='title'>{{ topic.title }}</div>
@@ -13,8 +8,10 @@
   
   <div>Barriers</div>
   <ul class='row barriers' ng-repeat='barrier in topic.barriers'>
-    <li class='preview'>{{ barrier['barrier'].title }}</li>
+    <li class='preview'>
+      <a  href='#/barriers/{{ barrier["barrier"].id_to_s }}'>{{ barrier['barrier'].title }}</a>
+    </li>
   </ul>
 </div>
 
-<div ng-include='"partials/footer.html"'></div>
+<div ng-include='"views/partials/footer.html"'></div>
