@@ -36,18 +36,6 @@ describe Api::V1::TopicsController do
         response.should be_success 
         response.should render_template :show
       end
-      
-      it ":topic_graph template" do 
-        topic = FactoryGirl.create(:topic)
-        
-        get :show, 
-          use_route: "api/v1", 
-          id: topic.id, 
-          render_all: true
-          
-        response.should be_success
-        response.should render_template :topic_graph
-      end
     end
   end
 end
