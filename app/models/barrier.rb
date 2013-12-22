@@ -2,8 +2,8 @@ class Barrier
   include Mongoid::Document
   include Varkek::Document
   
-  embedded_in :topic
-  embeds_many :contexts
+  belongs_to :topic
+  has_many :contexts
   
   field :title, 
     type: String

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
 describe Barrier do
-  it { should be_embedded_in :topic }
-  it { should embed_many :contexts }
+  it { should belong_to :topic }
+  it { should have_many :contexts }
 end

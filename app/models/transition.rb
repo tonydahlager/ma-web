@@ -2,7 +2,7 @@ class Transition
   include Mongoid::Document
   include Varkek::Document
   
-  embedded_in :step
+  belongs_to :step
   
   field :content, 
     type: String

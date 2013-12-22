@@ -2,8 +2,7 @@ class Topic
   include Mongoid::Document
   include Varkek::Document
   
-  embeds_many :questions
-  embeds_many :barriers
+  has_many :barriers
   
   field :title, 
     type: String
