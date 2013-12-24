@@ -6,7 +6,7 @@ angular.module('femaApp')
       '$resource',
       '$routeParams',
       function ($scope, $resource, $routeParams) {
-        var Context = $resource('staging.varke.com/api/v1/contexts/:id');
+        var Context = $resource('http://staging.varkek.com/api/v1/contexts/:id');
         var context = Context.get({id: $routeParams.id});
         $scope.context = context;
       }

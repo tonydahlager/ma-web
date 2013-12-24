@@ -6,7 +6,7 @@ angular.module('femaApp')
       '$routeParams',
       '$resource',
       function ($scope, $routeParams, $resource) {
-        var Topic = $resource('staging.varke.com/api/v1/topics/:id', {id: '@id'});
+        var Topic = $resource('http://staging.varkek.com/api/v1/topics/:id', {id: '@id'});
         var topic = Topic.get({ id: $routeParams.id });
         $scope.topic = topic;
       }
