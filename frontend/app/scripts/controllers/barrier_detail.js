@@ -6,7 +6,7 @@ angular.module('femaApp')
       '$resource', 
       '$routeParams',
       function ($scope, $resource, $routeParams) {
-        var Barrier = $resource('/api/v1/barriers/:id');
+        var Barrier = $resource('staging.varke.com/api/v1/barriers/:id');
         var barrier = Barrier.get({ id: $routeParams.id, 
                                     topic_id: $routeParams.topic_id });
 
