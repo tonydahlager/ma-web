@@ -23,4 +23,13 @@
   <%= @step.title %>
 </p>
 
+<p class="col-md-4" style="padding-left:0px;">
+  <b>Step Content:</b><br>
+  <%= @step.content %>
+</p>
+
+<div class="clearfix"></div>
+
+<br>
+
 <%= link_to 'Edit Step', edit_admin_topic_barrier_context_step_path(@topic, @barrier, @context, @step), { class: 'ma-link' }%>

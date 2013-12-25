@@ -29,7 +29,8 @@
   <thead>
     <tr>
       <td class="col-md-2">Actions</td>
-      <td>Step</td>
+      <td>Title</td>
+      <td>Content</td>
     </tr>
   </thead>
   
@@ -41,6 +42,7 @@
         <%= link_to 'Delete', admin_topic_barrier_context_step_path(@topic, @barrier, @context, step), {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
       </td>
       <td><%= step.title %></td>
+      <td><%= truncate(step.content, length: 80) %></td>
     </tr>
   <% end %>
 </table>

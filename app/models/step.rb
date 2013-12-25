@@ -7,4 +7,7 @@ class Step
   
   field :title, 
     type: String
+    
+  field :content, 
+    type: String
 end

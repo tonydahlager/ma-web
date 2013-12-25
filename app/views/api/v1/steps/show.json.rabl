@@ -1,2 +1,2 @@
 object @step
-attributes :id_to_s, :title
+attributes :id_to_s, :title, :content
