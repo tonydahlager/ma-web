@@ -5,23 +5,26 @@ module Api
       before_filter :set_context, only: [:index]
             
       def index 
-        @steps = @context.steps
-        render "index", 
-          formats: :json, 
-          collection: @steps
+        if @context 
+          @steps = @context.steps
+        else 
+          @steps = Context.all
+        end
+        
+        render "index", formats: :json, collection: @steps
       end
       
       def show
         @step = Step.find(params[:id])
-        render :show, 
-          formats: :json, 
-          object: @step
+        render :show, formats: :json, object: @step
       end
       
       private 
       
         def set_context
-          @context = Context.find(params[:context_id])
+          if params[:context_id]            
+            @context = Context.find(params[:context_id])
+          end
         end
         
     end

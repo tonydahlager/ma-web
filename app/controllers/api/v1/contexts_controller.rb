@@ -5,24 +5,26 @@ module Api
       before_filter :set_barrier, only: [:index]
             
       def index 
-        @contexts = @barrier.contexts
-        render "index", 
-          formats: :json, 
-          collection: @contexts
+        if @barrier
+          @contexts = @barrier.contexts
+        else
+          @contexts = Barrier.all
+        end
+        
+        render "index", formats: :json, collection: @contexts
       end
       
       def show
         @context = Context.find(params[:id])
-        render :show, 
-          formats: :json, 
-          object: @context
+        render :show, formats: :json, object: @context
       end
-      
       
       private 
       
         def set_barrier
-          @barrier = Barrier.find(params[:barrier_id])
+          if params[:barrier_id]
+            @barrier = Barrier.find(params[:barrier_id])
+          end
         end
         
     end
