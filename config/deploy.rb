@@ -14,7 +14,7 @@ set(:user)          { 'deploy' }
 set(:use_sudo)      { false }
 set(:ssh_options)   { { forward_agent: true } }
 set(:scm)           { :git }
-set(:repository)    { 'git@github.com:westonplatter/varkek-web.git' }
+set(:repository)    { 'git@github.com:apologetics/ma-web.git' }
 set(:deploy_to)     { "/home/deploy/sites/varkek/#{rails_env}" }
 
 default_run_options[:pty] = true
