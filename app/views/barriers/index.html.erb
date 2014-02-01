@@ -1,5 +1,12 @@
 <h1>Barriers</h1>
 
-<% @barriers.map do |b| %>
-  <%= link_to b.title, barrier_path(b), class: 'ma-link' %>
-<% end %>
+<table>
+    <% @barriers.map do |b| %>
+      <tr>
+        <td>
+          <%= link_to b.title, barrier_path(b), class: 'ma-link' %>
+        </td>
+      </tr>
+    <% end %>
+</table>
+
