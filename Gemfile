@@ -17,23 +17,21 @@ gem 'rabl'
 gem 'prawn', '~> 1.0.0.rc2'
 gem 'figaro'
 
-### deploy
-
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'foreman'
-
 ### testing/dev
+group :development, :test do 
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'foreman'
 
-gem 'rake'
-gem 'rspec'
-gem 'rspec-rails'
-gem 'mongoid-rspec'
-gem 'pry'
-gem 'database_cleaner'
-gem 'factory_girl_rails'
-gem 'database_cleaner'
-gem 'guard-rspec'
-gem 'jasmine-rails'
-gem 'quiet_assets'
-
+  gem 'rake'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'mongoid-rspec'
+  gem 'pry'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'guard-rspec'
+  gem 'jasmine-rails'
+  gem 'quiet_assets'
+  gem 'capybara'
+end
