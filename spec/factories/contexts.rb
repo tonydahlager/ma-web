@@ -1,7 +1,9 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
+  
   factory :context do
     title "MyString"
+    
+    factory :context_with_barriers, class: Context do 
+    end
   end
 end

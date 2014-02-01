@@ -5,6 +5,5 @@ class Context
   belongs_to :barrier
   has_many :steps
   
-  field :title, 
-    type: String
+  field :title, type: String
 end
