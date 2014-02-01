@@ -21,7 +21,10 @@ Varkek::Application.routes.draw do
       resources :steps,     only: [:index, :show]
     end
   end
-    
+  
+  resources :barriers, only: [:index, :show]
+  resources :contexts, only: [:show] 
+  
   devise_for :users, :skip => [:registrations, :invitation]
   as :user do
     get 'users/edit' => 'devise/registrations#edit',   as: 'edit_user_registration'

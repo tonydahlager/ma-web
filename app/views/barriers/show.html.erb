@@ -1,0 +1,22 @@
+<h1>Barrier: <%= @barrier.title %></h1>
+
+<p>User input box here</p>
+
+<h3>Questions</h3>
+<table>
+  <% @barrier.questions.map do |question| %>
+    <tr>
+      <td><%= question.title %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<h3>Contexts</h3>
+<table>
+  <% @barrier.contexts.map do |context| %>
+    <tr>
+      <td><%= link_to context.title, context_path(context) %></td>
+    </tr>
+  <% end %>
+</table>

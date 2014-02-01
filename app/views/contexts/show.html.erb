@@ -1,0 +1,13 @@
+<h1>Context <%= @context.title %></h1>
+
+<h3>Content</h3>
+
+<h3>Barriers</h3>
+<table>
+  <% @context.expected_barriers.map do |barrier| %>
+    <tr>
+      <td><%= link_to barrier.title, barrier_path(barrier) %></td>
+    </tr>
+  <% end %>
+</table>
+
