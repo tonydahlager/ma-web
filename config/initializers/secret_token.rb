@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Varkek::Application.config.secret_key_base = 'c0ecea04b8d6adf28e77ac7e8ef69fc7dea29eb49ec83481876dd6174a2fba92a54cc3f92f7b366a943095e8a5d8c210bf38f5ff4cf6ab4b4388445714587d50'
+Varkek::Application.config.secret_key_base = ENV['RAILS_SECRET_KEY']

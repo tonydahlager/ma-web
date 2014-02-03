@@ -4,7 +4,8 @@ common: &common
   MANDRILL_USERNAME: 'email@example.com'
   MANDRILL_PASSWORD: 'abc123'
   DEVISE_SECRET_KEY: 'devise_secret_key'
-
+  RAILS_SECRET_KEY:  'rails_secret_key'
+  
 development:
   <<: *common
 
