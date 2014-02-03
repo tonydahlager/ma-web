@@ -5,7 +5,6 @@ ruby '2.0.0'
 gem 'rails',   '4.0.2'
 
 ### app
-
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
@@ -17,11 +16,15 @@ gem 'rabl'
 gem 'prawn', '~> 1.0.0.rc2'
 gem 'figaro'
 
+### server
+gem 'foreman'
+gem 'puma'
+gem 'newrelic_rpm'
+
 ### testing/dev
 group :development, :test do 
   gem 'capistrano'
-  gem 'rvm-capistrano'
-  gem 'foreman'
+  gem 'capistrano-rbenv'
 
   gem 'rake'
   gem 'rspec'
