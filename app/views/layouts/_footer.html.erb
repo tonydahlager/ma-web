@@ -1,0 +1,10 @@
+<div id='footer'>
+  <div class='container'>
+    <b>apologetics.io</b> 
+    <% if current_user.nil? %>
+        | <%= link_to 'Sign in', new_user_session_path %>        
+    <% end %>
+  </div>
+</div>
+
+
