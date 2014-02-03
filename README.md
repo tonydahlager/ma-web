@@ -1,11 +1,6 @@
 varkek-web
 ----------
-
-master &nbsp; [![Build Status](https://travis-ci.org/westonplatter/varkek-web.png?branch=master)](https://travis-ci.org/westonplatter/varkek-web)
-<br>
-stable &nbsp;&nbsp;&nbsp; [![Build Status](https://travis-ci.org/westonplatter/varkek-web.png?branch=stable)](https://travis-ci.org/westonplatter/varkek-web)
-
-
+[![Build Status](https://travis-ci.org/apologetics/ma-web.png)](https://travis-ci.org/apologetics/ma-web)
 
 inspiring deep conversations.
 
