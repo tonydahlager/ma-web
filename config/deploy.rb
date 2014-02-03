@@ -1,33 +1,27 @@
 load 'deploy/assets'
 
 set :stages, %w(production staging)
-set :default_stage, 'staging'
+set :default_stage, 'production'
 
+require 'puma/capistrano'
 require 'capistrano/ext/multistage'
 require 'bundler/capistrano'
-require 'rvm/capistrano'
+require 'capistrano-rbenv'
 
-set :rvm_type, :system
+set :rbenv_install_bundler, true       # ma-deploy install rbenv
+set :rbenv_ruby_version, '2.0.0-p353'  # matches rbenv in ma-deploy 
+
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
 set(:application)   { 'varkek' }
 set(:user)          { 'deploy' }
 set(:use_sudo)      { false }
-set(:ssh_options)   { { forward_agent: true } }
 set(:scm)           { :git }
 set(:repository)    { 'git@github.com:apologetics/ma-web.git' }
-set(:deploy_to)     { "/home/deploy/sites/varkek/#{rails_env}" }
+set(:deploy_to)     { "/var/www/ma-web/#{rails_env}" }
 
-default_run_options[:pty] = true
-server 'varkek.com', :app, :web, :primary => true
-
-# If you are using Passenger mod_rails uncomment this:
-namespace :deploy do
-  task :start do ; end
-  task :stop  do ; end
-  task :restart, roles: :app, except: { no_release: true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
-end
+server '162.243.245.187', :app, :web, :primary => true
 
 task :symlink_database_yml do
   run "ln -sfn #{shared_path}/config/mongoid.yml #{release_path}/config/mongoid.yml"

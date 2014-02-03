@@ -34,5 +34,5 @@ Varkek::Application.routes.draw do
     put '/users/invitation'        => 'devise/invitations#update', as: nil
   end
 
-  root to: 'admin/topics#index'
+  root to: 'barriers#index'
 end
