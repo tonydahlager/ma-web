@@ -228,6 +228,8 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     ttfunk (1.0.3)
+    turbolinks (2.2.0)
+      coffee-rails
     tzinfo (0.3.38)
     uglifier (2.3.2)
       execjs (>= 0.3.0)
@@ -267,4 +269,5 @@ DEPENDENCIES
   rspec
   rspec-rails
   sass-rails
+  turbolinks
   uglifier

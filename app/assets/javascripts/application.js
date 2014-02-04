@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require rails
+//= require turbolinks
 //= require bootstrap
 //= require_tree .
