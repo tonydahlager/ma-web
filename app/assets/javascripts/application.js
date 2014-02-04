@@ -12,6 +12,5 @@
 //
 //= require jquery
 //= require rails
-//= require jquery-ui
 //= require bootstrap
 //= require_tree .
