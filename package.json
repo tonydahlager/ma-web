@@ -3,17 +3,15 @@
   "version": "0.0.1",
   "description": "mobile apologetics",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/westonplatter/varkek-web.git"
+    "url": "git://github.com/apologetics/ma-web.git"
   },
   "author": "westonplatter",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/westonplatter/varkek-web/issues"
+    "url": "https://github.com/apologetics/ma-web/issues"
   },
   "dependencies": {
     "bower-installer": "~0.6.0"
