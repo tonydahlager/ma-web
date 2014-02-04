@@ -24,7 +24,6 @@
   },
   "dependencies": {
     "jquery": "*",
-    "jquery-ui": "*",
     "jquery-ujs": "*",
     "bootstrap": "~3.0.3"
   }
