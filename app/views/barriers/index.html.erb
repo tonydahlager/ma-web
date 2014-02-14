@@ -1,12 +1,52 @@
-<h1>Barriers</h1>
-
-<table>
-    <% @barriers.map do |b| %>
-      <tr>
-        <td>
-          <%= link_to b.title, barrier_path(b), class: 'ma-link' %>
-        </td>
-      </tr>
+<div class="jumbotron">
+  <h1>Apologetics</h1>
+</div>
+<div>
+  <%= form_for :search, url: search_barriers_path, method: :get do |f| %>
+    <% # FIXME - make placeholder dynamic and correlate with metrics %>
+    <%= f.text_field :search_query, class: 'form-control', placeholder: "I don't believe in god because ..."  %>
+    <br>
+    <%= f.submit class: 'btn btn-primary btn-sm', value: 'Submit' %>
+  <% end %>
+</div>
+  
+<% if @barriers %>
+  <h4>Search Results</h4>
+  <div class="list-group">  
+    
+    <% @barriers.each do |barrier| %>
+      <%= link_to barrier_path(barrier), class: 'list-group-item' do %>
+        <h5><%= barrier.title %></h5>
+      <% end %>
     <% end %>
-</table>
-
+    
+    <!-- 
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Search Result 1</h5>
+      <p class="list-group-item-text">More on this topic</p>
+      <span class="label label-default">label 1</span>
+      <span class="label label-default">label 2</span>
+    </a> 
+    -->
+    
+  </div>
+<% end %>
+  
+<!-- 
+<h4>Barrier Questions</h4>
+<div class="list-group">  
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 1</h5>
+    <span class="label label-default">label 1</span>
+    <span class="label label-default">label 2</span>
+  </a>
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 2</h5>
+    <span class="label label-default">label 2</span>
+  </a>
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 3</h5>
+    <span class="label label-default">label 3</span>
+  </a>
+</div> 
+-->

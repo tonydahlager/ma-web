@@ -22,7 +22,9 @@ Varkek::Application.routes.draw do
     end
   end
   
-  resources :barriers, only: [:index, :show]
+  resources :barriers, only: [:index, :show] do 
+    get 'search', on: :collection
+  end
   resources :contexts, only: [:show] 
   
   devise_for :users, :skip => [:registrations, :invitation]
