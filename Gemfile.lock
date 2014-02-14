@@ -128,6 +128,11 @@ GEM
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.14)
+    mongoid_rails_migrations (1.0.1)
+      activesupport (>= 3.2.0)
+      bundler (>= 1.0.0)
+      rails (>= 3.2.0)
+      railties (>= 3.2.0)
     moped (2.0.0.beta4)
       bson (~> 2.0)
       connection_pool (~> 1.2)
@@ -258,6 +263,7 @@ DEPENDENCIES
   jasmine-rails
   mongoid (= 4.0.0.alpha1)
   mongoid-rspec
+  mongoid_rails_migrations
   newrelic_rpm
   prawn (~> 1.0.0.rc2)
   pry
