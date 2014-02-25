@@ -22,6 +22,7 @@ gem 'figaro'
 gem 'foreman'
 gem 'puma'
 gem 'newrelic_rpm'
+gem 'analytics-ruby', '<1.0'
 
 ### testing/dev
 group :development, :test do 
