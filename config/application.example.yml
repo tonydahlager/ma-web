@@ -5,6 +5,7 @@ common: &common
   MANDRILL_PASSWORD: 'abc123'
   DEVISE_SECRET_KEY: 'devise_secret_key'
   RAILS_SECRET_KEY:  'rails_secret_key'
+  SEGMENTIO_KEY:     'segment_io'
   
 development:
   <<: *common
