@@ -34,7 +34,7 @@ group :development, :test do
 
   gem 'rake'
   gem 'rspec-rails'
-  gem 'guard-rspec'
+  gem 'guard-rspec', require: false
   gem 'mongoid-rspec'
   gem 'pry'
   gem 'factory_girl_rails'

@@ -56,3 +56,7 @@ end
 group 'l' do 
   guard 'rspec', spec_paths: ['spec/lib'], :cli => "--color --format progress"
 end
+
+group 'f' do 
+  guard 'rspec', spec_paths: ['spec/features'], :cli => '--color --format progress'
+end
