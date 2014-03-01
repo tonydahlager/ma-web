@@ -1,0 +1,26 @@
+<%= link_to 'Back to Question', [:admin, @question], { class: 'ma-link' } %>
+<br>
+<br>
+<br>
+
+<p>
+  <strong>Question:</strong>
+  <%= @question.title %>
+</p>
+
+<%= link_to 'Go to Question', admin_question_path(@question), { class: 'ma-link' }%>
+<br>
+<br>
+
+<p>
+  <strong>Title:</strong>
+  <%= @answer.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @answer.content %>
+</p>
+
+
+<%= link_to 'Edit Answer', edit_admin_question_answer_path(@question, @answer), { class: 'ma-link' }%>

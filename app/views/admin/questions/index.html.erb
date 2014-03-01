@@ -1,0 +1,27 @@
+<table class='table'>
+  <thead>
+    <tr>
+      <th class='col-md-2'></th>
+      <th class='col-md-4'>Title</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td>
+          <%= link_to 'Go to', [:admin, question], { class: 'ma-link'} %>
+          <%= link_to 'Destroy', [:admin, question], {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
+        </td>
+        <td><%= question.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class='sub-table-links'>
+  <%= link_to 'New Question', new_admin_question_path, { class: 'ma-link'} %>
+</div>
+

@@ -10,7 +10,7 @@ describe :barriers do
   end
   
   it :show do 
-    b = FactoryGirl.create(:barrier_full)
+    b = FactoryGirl.create(:barrier)
     visit barrier_path(b)
     page.current_path.should  eq("/barriers/#{b.id.to_s}")
     page.status_code.should   be(200)

@@ -1,0 +1,17 @@
+<div class='panel panel-default'>
+  <div class='panel-heading'>Answers</div>
+  <!-- <div class='panel-body'></div> -->
+  <ul class='list-group'>
+    <% answers.each do |answer| %>
+      <li class='list-group-item'>
+        <%= link_to 'Go To', admin_question_answer_path(question, answer), { class: 'btn btn-default btn-sm'} %>
+        <%= link_to 'Delete', [:admin, question, answer], 
+          { class: 'btn btn-default btn-sm', method: :delete, "data-confirm" => 'Are you sure?' } %>&nbsp;
+        <%= question.title %>
+      </li>
+    <% end %>
+    <li class='list-group-item'>
+      <%= button_to 'New Answer', new_admin_question_answer_path(question), { method: :get, class: 'btn btn-success btn-sm' } %>
+    </li>
+  </ul>
+</div>

@@ -9,7 +9,13 @@ Varkek::Application.routes.draw do
         end
       end
     end
+    
     resources :users
+    
+    resources :questions do 
+      resources :answers
+    end
+    
     root to: 'topics#index'
   end
 

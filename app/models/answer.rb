@@ -1,9 +1,9 @@
-class Question
+class Answer 
   include Mongoid::Document
   include Varkek::Document
   
   field :title, type: String
   field :content, type: String
   
-  has_many :answers
+  belongs_to :question
 end
