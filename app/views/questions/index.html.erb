@@ -1,0 +1,52 @@
+<div class="jumbotron">
+  <h1>Apologetics</h1>
+</div>
+<div>
+  <%= form_for :search, url: search_questions_path, method: :get do |f| %>
+    <% # FIXME - make placeholder dynamic and correlate with metrics %>
+    <%= f.text_field :search_query, class: 'form-control', placeholder: "I don't believe in god because ..."  %>
+    <br>
+    <%= f.submit class: 'btn btn-primary btn-sm', value: 'Submit' %>
+  <% end %>
+</div>
+  
+<% if @questions %>
+  <h4>Search Results</h4>
+  <div class="list-group">  
+    
+    <% @questions.each do |question| %>
+      <%= link_to question_path(question), class: 'list-group-item' do %>
+        <h5><%= question.title %></h5>
+      <% end %>
+    <% end %>
+    
+    <!-- 
+    <a href="#" class="list-group-item">
+      <h5 class="list-group-item-heading">Search Result 1</h5>
+      <p class="list-group-item-text">More on this topic</p>
+      <span class="label label-default">label 1</span>
+      <span class="label label-default">label 2</span>
+    </a> 
+    -->
+    
+  </div>
+<% end %>
+  
+<!-- 
+<h4>Barrier Questions</h4>
+<div class="list-group">  
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 1</h5>
+    <span class="label label-default">label 1</span>
+    <span class="label label-default">label 2</span>
+  </a>
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 2</h5>
+    <span class="label label-default">label 2</span>
+  </a>
+  <a href="#" class="list-group-item">
+    <h5 class="list-group-item-heading">Barrier Question 3</h5>
+    <span class="label label-default">label 3</span>
+  </a>
+</div> 
+-->

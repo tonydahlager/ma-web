@@ -1,0 +1,18 @@
+
+/************ UI Elements *****************************************************/
+
+.ma-text-edit {
+  width: 50%;
+  height: 200px;
+}
+
+.ma-link {
+  @extend .btn;
+  @extend .btn-default;
+  @extend .btn-xs;
+}
+
+.content {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}

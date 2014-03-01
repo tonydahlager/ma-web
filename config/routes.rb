@@ -9,13 +9,10 @@ Varkek::Application.routes.draw do
         end
       end
     end
-    
     resources :users
-    
     resources :questions do 
       resources :answers
     end
-    
     root to: 'topics#index'
   end
 
@@ -33,6 +30,11 @@ Varkek::Application.routes.draw do
   end
   resources :contexts, only: [:show] 
   
+  resources :questions, only: [:index, :show] do
+    get 'search', on: :collection
+  end
+  resources :answers, only: [:show] 
+  
   devise_for :users, :skip => [:registrations, :invitation]
   as :user do
     get 'users/edit' => 'devise/registrations#edit',   as: 'edit_user_registration'
@@ -42,5 +44,5 @@ Varkek::Application.routes.draw do
     put '/users/invitation'        => 'devise/invitations#update', as: nil
   end
 
-  root to: 'barriers#index'
+  root to: 'questions#index'
 end

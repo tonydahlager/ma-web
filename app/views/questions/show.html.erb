@@ -1,0 +1,25 @@
+<h1><%= @question.title %></h1>
+
+<div class="content">
+  <%= @question.content.html_safe %>
+</div>
+
+<div class="panel-group" id="accordion">
+  <% @question.answers.map do |answer| %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#<%= answer.id.to_s %>">
+            <%= answer.title %>
+          </a>
+        </h4>
+      </div>
+      <div id="<%= answer.id.to_s %>" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <%= answer.content %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

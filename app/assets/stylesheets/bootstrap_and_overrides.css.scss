@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-/************ Layout **********************************************************/
-
 $footer_padding: 60px;
 
 html, body {
@@ -24,17 +22,4 @@ html, body {
 #footer {
   padding-top: 20px;
   background-color: #f5f5f5;
-}
-
-/************ UI Elements *****************************************************/
-
-.ma-text-edit {
-  width: 50%;
-  height: 200px;
-}
-
-.ma-link {
-  @extend .btn;
-  @extend .btn-default;
-  @extend .btn-xs;
 }
