@@ -7,21 +7,18 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
   
-  def search 
-    # @questions = Question.where(title: /#{params_search}/)
-    @questions = Question.all
+  def search
+    significant_words = four_chars_or_more(params_search[:query]) 
+    @questions = Question.full_text_search(significant_words)
     render :index
   end
   
   private 
     def params_search
-      params.permit(:search_query)
+      params.require(:search).permit(:query)
     end
     
-    def words_four_chars_or_greater
-      result = []
-      words = params_search.split(/\s/)
-      words.map{ |word| result << word if word.length > 3 }
-      result
+    def four_chars_or_more(keywords)
+      keywords.split(/\s/).select{ |word| word.length > 3 }
     end
 end

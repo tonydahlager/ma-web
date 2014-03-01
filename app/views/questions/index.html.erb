@@ -4,7 +4,7 @@
 <div>
   <%= form_for :search, url: search_questions_path, method: :get do |f| %>
     <% # FIXME - make placeholder dynamic and correlate with metrics %>
-    <%= f.text_field :search_query, class: 'form-control', placeholder: "I don't believe in god because ..."  %>
+    <%= f.text_field :query, class: 'form-control', placeholder: "I don't believe in god because ..."  %>
     <br>
     <%= f.submit class: 'btn btn-primary btn-sm', value: 'Submit' %>
   <% end %>
