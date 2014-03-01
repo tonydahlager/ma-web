@@ -6,17 +6,14 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <%= link_to 'apologetics.io', admin_root_path, class: 'navbar-brand' %>
+    <%= link_to 'apologetics.io', root_path, class: 'navbar-brand' %>
   </div>
 
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <!-- left -->
     <ul class="nav navbar-nav">
       <li><%= link_to 'Barriers', barriers_path %></li>
       </li>
     </ul>
-    
-    <!-- right -->
     <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
