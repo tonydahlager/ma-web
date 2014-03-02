@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
   
   def show 
     @question = Question.find(params[:id])
-    @question.views_incr
+    @question.viewed
   end
   
   def search
