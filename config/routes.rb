@@ -43,6 +43,8 @@ Varkek::Application.routes.draw do
     get '/users/invitation/accept' => 'devise/invitations#edit',   as: 'accept_user_invitation'
     put '/users/invitation'        => 'devise/invitations#update', as: nil
   end
-
+  
+  resources :redis_stats, only: [:create]
+  
   root to: 'questions#index'
 end

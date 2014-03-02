@@ -6,6 +6,8 @@ module Admin
     # GET /admin/questions
     def index
       @questions = Question.all
+      @question_views_count = Question.views_count
+      @question_views_count_today = Question.views_count_today
     end
 
     # GET /admin/questions/new

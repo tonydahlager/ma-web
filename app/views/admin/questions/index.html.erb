@@ -1,8 +1,15 @@
+<div>
+  <p>All views = <%= @question_views_count %></p>
+  <p>All views today = <%= @question_views_count_today %></p>
+</div>
+
 <table class='table'>
   <thead>
     <tr>
       <th class='col-md-2'></th>
-      <th class='col-md-4'>Title</th>
+      <th class='col-md-1'>Views</th>
+      <th class='col-md-1'>Views Today</th>
+      <th class='col-md-6'>Title</th>
     </tr>
   </thead>
 
@@ -13,6 +20,8 @@
           <%= link_to 'Go to', [:admin, question], { class: 'ma-link'} %>
           <%= link_to 'Destroy', [:admin, question], {method: :delete, 'data-conform' => 'Are you sure?', class: 'ma-link'} %>
         </td>
+        <td><%= question.views_count %></td>
+        <td><%= question.views_count_today %></td>
         <td><%= question.title %></td>
       </tr>
     <% end %>

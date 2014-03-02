@@ -20,6 +20,7 @@ gem 'devise', '>= 3', '< 4'
 gem 'rabl'
 gem 'prawn', '~> 1.0.0.rc2'
 gem 'figaro'
+gem 'redis'
 
 ### server
 gem 'foreman'
